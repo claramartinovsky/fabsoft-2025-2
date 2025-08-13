@@ -7,12 +7,12 @@ Clara Meister Martinovsky e Guilherme Torres Fiedler.
 	- marcar status de jogo; 
 	- avaliações e resenhas; 
 	- APIs para dados de jogos
-
+<s>
 - Aplicativo de Diário criativo: 
 	- criação e edição de entrada multimídia(áudio, imagens, desenhos); 
 	- Organização visual com temas; 
 	- Notificações e lembretes; 
-
+</s>
 
 ## Aula 05/08
 - JRE - Java Runtime Enviroment
