@@ -56,3 +56,138 @@ Integração com APIs de Dados de Jogos
 
 Como desenvolvedor, eu gostaria de integrar a plataforma com APIs externas para obter dados atualizados sobre jogos, como informações de lançamento e atualizações.
 
+## Aula 19/08
+## Diagrama de entidades
+
+
+```mermaid
+---
+title: Diagrama de Entidades - Rede Social de Avaliação de Jogos
+---
+classDiagram
+    Usuario "*" --> "1" Colecao
+    Usuario "*" --> "1" Avaliacao
+    Usuario "*" --> "1" Resenha
+    Colecao "*" --> "1" Jogo
+    Colecao "*" --> "*" Status
+    Jogo "*" --> "1" Plataforma
+    Jogo "*" --> "1" Categoria
+    Jogo "*" --> "1" API_Integracao
+    Status "*" --> "1" StatusEnum
+    Avaliacao "*" --> "1" Jogo
+    Resenha "*" --> "1" Jogo
+
+    class Usuario {
+        -id : long
+        -nome : String
+        -email : String
+        -senha : String
+        -dataNascimento : Date
+        +getId() long
+        +setId(id: long) void
+        +getNome() String
+        +setNome(nome: String) void
+        +getEmail() String
+        +setEmail(email: String) void
+        +getSenha() String
+        +setSenha(senha: String) void
+        +getDataNascimento() Date
+        +setDataNascimento(dataNascimento: Date) void
+    }
+
+    class Colecao {
+        -id : long
+        -usuarioId : long
+        +getId() long
+        +setId(id: long) void
+        +getUsuarioId() long
+        +setUsuarioId(usuarioId: long) void
+    }
+
+    class Jogo {
+        -id : long
+        -nome : String
+        -descricao : String
+        -dataLancamento : Date
+        -categoriaId : long
+        -plataformaId : long
+        +getId() long
+        +setId(id: long) void
+        +getNome() String
+        +setNome(nome: String) void
+        +getDescricao() String
+        +setDescricao(descricao: String) void
+        +getDataLancamento() Date
+        +setDataLancamento(dataLancamento: Date) void
+    }
+
+    class Status {
+        -id : long
+        -nome : String
+        +getId() long
+        +setId(id: long) void
+        +getNome() String
+        +setNome(nome: String) void
+    }
+
+    class StatusEnum {
+        -status : String
+        +getStatus() String
+        +setStatus(status: String) void
+    }
+
+    class Avaliacao {
+        -id : long
+        -usuarioId : long
+        -jogoId : long
+        -nota : int
+        -comentario : String
+        +getId() long
+        +setId(id: long) void
+        +getNota() int
+        +setNota(nota: int) void
+        +getComentario() String
+        +setComentario(comentario: String) void
+    }
+
+    class Resenha {
+        -id : long
+        -usuarioId : long
+        -jogoId : long
+        -conteudo : String
+        +getId() long
+        +setId(id: long) void
+        +getConteudo() String
+        +setConteudo(conteudo: String) void
+    }
+
+    class Plataforma {
+        -id : long
+        -nome : String
+        +getId() long
+        +setId(id: long) void
+        +getNome() String
+        +setNome(nome: String) void
+    }
+
+    class Categoria {
+        -id : long
+        -nome : String
+        +getId() long
+        +setId(id: long) void
+        +getNome() String
+        +setNome(nome: String) void
+    }
+
+    class API_Integracao {
+        -id : long
+        -nome : String
+        -url : String
+        +getId() long
+        +setId(id: long) void
+        +getNome() String
+        +setNome(nome: String) void
+        +getUrl() String
+        +setUrl(url: String) void
+    }
+```    
