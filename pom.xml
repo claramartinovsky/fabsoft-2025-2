@@ -11,6 +11,7 @@
 
     <modules>
         <module>revisao-poo-clara</module>
+        <module>fabsoft-backend</module>
        
     </modules>
 
