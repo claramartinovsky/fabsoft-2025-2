@@ -11,4 +11,16 @@ public class Colecao {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private long usuarioId;
+    public long getId() {
+        return id;
+    }
+    public void setId(long id) {
+        this.id = id;
+    }
+    public long getUsuarioId() {
+        return usuarioId;
+    }
+    public void setUsuarioId(long usuarioId) {
+        this.usuarioId = usuarioId;
+    }
 }
