@@ -65,13 +65,13 @@ Como desenvolvedor, eu gostaria de integrar a plataforma com APIs externas para 
 title: Diagrama de Entidades - Rede Social de Avaliação de Jogos
 ---
 classDiagram
-    Usuario "*" --> "1" Colecao
-    Usuario "*" --> "1" Avaliacao
-    Usuario "*" --> "1" Resenha
-    Colecao "*" --> "1" Jogo
-    Colecao "*" --> "*" Status
-    Jogo "*" --> "1" Plataforma
-    Jogo "*" --> "1" Categoria
+    Usuario "1" --> "1" Colecao
+    Usuario "1" --> "*" Avaliacao
+    Usuario "1" --> "*" Resenha
+    Colecao "1" --> "*" Jogo
+    Colecao "1" --> "*" Status
+    Jogo "1" --> "*" Plataforma
+    Jogo "1" --> "*" Categoria
     Jogo "*" --> "1" API_Integracao
     Status "*" --> "1" StatusEnum
     Avaliacao "*" --> "1" Jogo
