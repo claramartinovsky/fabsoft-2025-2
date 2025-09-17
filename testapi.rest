@@ -1,3 +1,29 @@
 ### GET Clientes 
 GET http://localhost:8080/api/v1/jogos
 Content-Type: application/json
+
+### POST Clientes 
+POST http://localhost:8080/api/v1/jogos
+Content-Type: application/json
+
+{
+  "categoria_id": 3,
+  "data_lancamento": "2025-09-11",
+  "id": 0,
+  "plataforma_id": "2",
+  "descricao": "bom",
+  "nome": "thelastofus"
+}
+
+### PUT Clientes
+PUT http://localhost:8080/api/v1/jogos
+Content-Type: application/json
+
+{
+  "categoria_id": 4,
+  "data_lancamento": "2025-09-21",
+  "id": 0,
+  "plataforma_id": "3",
+  "descricao": "flopou",
+  "nome": "csgo"
+}

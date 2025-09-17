@@ -6,6 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,5 +27,29 @@ public class JogoController {
     public ResponseEntity<List<Jogo>> getJogos() {
         var listaJogos = service.getAll();
         return new ResponseEntity<List<Jogo>>(listaJogos, HttpStatus.OK);
+    }
+    @PostMapping
+    public ResponseEntity<Jogo> save(@RequestBody Jogo jogo){
+        if(jogo == null){
+            return ResponseEntity.badRequest().build();
+        }
+        if(jogo.getId() == 0){
+            jogo = service.save(jogo);
+            return new ResponseEntity<Jogo>(jogo,HttpStatus.OK);
+        }
+        return ResponseEntity.badRequest().build();
+    }
+    @PutMapping("/{id}")
+    public ResponseEntity<Jogo> 
+        update(@RequestBody Jogo jogo,
+            @PathVariable long id){
+
+        if(id <= 0 || jogo == null){
+            return ResponseEntity.badRequest().build();
+        }
+
+        jogo = service.update(id, jogo);
+        return new ResponseEntity<Jogo>(jogo,
+            HttpStatus.OK);
     }
 }
