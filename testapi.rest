@@ -1,8 +1,8 @@
-### GET Clientes 
+### GET Jogos
 GET http://localhost:8080/api/v1/jogos
 Content-Type: application/json
 
-### POST Clientes 
+### POST jogos
 POST http://localhost:8080/api/v1/jogos
 Content-Type: application/json
 
@@ -15,7 +15,7 @@ Content-Type: application/json
   "nome": "thelastofus"
 }
 
-### PUT Clientes
+### PUT Jogos
 PUT http://localhost:8080/api/v1/jogos
 Content-Type: application/json
 
@@ -27,3 +27,7 @@ Content-Type: application/json
   "descricao": "flopou",
   "nome": "csgo"
 }
+
+### DELETE Jogos
+DELETE http://localhost:8080/api/v1/jogos
+Content-Type: application/json

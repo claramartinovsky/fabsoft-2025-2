@@ -25,4 +25,39 @@ public class JogoServiceImpl implements JogoService {
         return repository.save(jogo);
     }
 
+    @Override
+    public Jogo update(long id, Jogo jogo) throws Exception{
+    
+        var jogoAntigo = repository.findById(id).orElse(null);
+        if (jogoAntigo == null) {
+            throw new Exception("Jogo inexistente");
+        }
+
+     
+        jogoAntigo.setNome(jogo.getNome());
+        jogoAntigo.setDescricao(jogo.getDescricao());
+        jogoAntigo.setDataLancamento(jogo.getDataLancamento());
+        jogoAntigo.setCategoriaId(jogo.getCategoriaId());
+        jogoAntigo.setPlataformaId(jogo.getPlataformaId());
+        
+      
+        repository.save(jogoAntigo);
+
+        return jogoAntigo;
+    }
+
+    @Override
+    public Jogo delete(long id) throws Exception {
+      
+        var jogoAntigo = repository.findById(id).orElse(null);
+        
+      
+        if (jogoAntigo == null) {
+            throw new Exception("Jogo inexistente");
+        }
+
+     
+        repository.delete(jogoAntigo);
+        return jogoAntigo;
+    }
 }

@@ -7,5 +7,6 @@ import br.univille.fabsoft_backend.entity.Jogo;
 public interface JogoService {
     List<Jogo> getAll();
     Jogo save(Jogo jogo);
-    Jogo update(long id, Jogo jogo);
+    Jogo update(long id, Jogo jogo) throws Exception;
+    Jogo delete(long id) throws Exception;
 }

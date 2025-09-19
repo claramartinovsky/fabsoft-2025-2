@@ -48,8 +48,8 @@ public class JogoController {
             return ResponseEntity.badRequest().build();
         }
 
-        jogo = service.update(id, jogo);
-        return new ResponseEntity<Jogo>(jogo,
-            HttpStatus.OK);
+        try {jogo = service.update(id, jogo);
+           return new ResponseEntity<Jogo>(jogo, HttpStatus.OK); 
+        }  catch (Exception e) {return ResponseEntity.notFound().build();}
     }
 }
