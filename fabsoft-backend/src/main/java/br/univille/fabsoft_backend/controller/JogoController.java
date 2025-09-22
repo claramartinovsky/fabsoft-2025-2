@@ -50,6 +50,25 @@ public class JogoController {
 
         try {jogo = service.update(id, jogo);
            return new ResponseEntity<Jogo>(jogo, HttpStatus.OK); 
-        }  catch (Exception e) {return ResponseEntity.notFound().build();}
+        }  catch (Exception e) {return ResponseEntity.notFound().build();
+        }
+            
+    }
+     @DeleteMapping("/{id}")
+    public ResponseEntity<Jogo> 
+        update(@PathVariable long id){
+
+        if(id <= 0){
+            return ResponseEntity.badRequest().build();
+        }
+
+        try {
+            var jogo = service.delete(id);
+            return new ResponseEntity<Jogo>(jogo,HttpStatus.OK);
+        } catch (Exception e) {
+            return ResponseEntity.notFound().build();
+        }
+
+
     }
 }
