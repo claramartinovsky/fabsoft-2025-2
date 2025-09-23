@@ -5,8 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.univille.fabsoft_backend.entity.Categoria;
 import br.univille.fabsoft_backend.entity.Jogo;
+import br.univille.fabsoft_backend.entity.Plataforma;
+import br.univille.fabsoft_backend.repository.CategoriaRepository;
 import br.univille.fabsoft_backend.repository.JogoRepository;
+import br.univille.fabsoft_backend.repository.PlataformaRepository;
 import br.univille.fabsoft_backend.service.JogoService;
 
 @Service
@@ -14,6 +18,12 @@ public class JogoServiceImpl implements JogoService {
 
     @Autowired
     private JogoRepository repository;
+    
+    @Autowired
+    private CategoriaRepository categoriaRepository;
+
+    @Autowired
+    private PlataformaRepository plataformaRepository;
 
     @Override
     public List<Jogo> getAll() {
@@ -37,10 +47,18 @@ public class JogoServiceImpl implements JogoService {
         jogoAntigo.setNome(jogo.getNome());
         jogoAntigo.setDescricao(jogo.getDescricao());
         jogoAntigo.setDataLancamento(jogo.getDataLancamento());
-        jogoAntigo.setCategoria(jogo.getCategoria());
-        jogoAntigo.setPlataforma(jogo.getPlataforma());
-        
-      
+        //jogoAntigo.setCategoria(jogo.getCategoria());
+        //jogoAntigo.setPlataforma(jogo.getPlataforma());
+         if (jogo.getCategoria() != null && jogo.getCategoria().getId() > 0) {
+            Categoria categoria = categoriaRepository.findById(jogo.getCategoria().getId())
+                .orElseThrow(() -> new Exception("Categoria inexistente"));
+            jogoAntigo.setCategoria(categoria);
+        }
+      if (jogo.getPlataforma() != null && jogo.getPlataforma().getId() > 0) {
+            Plataforma plataforma = plataformaRepository.findById(jogo.getPlataforma().getId())
+                .orElseThrow(() -> new Exception("Plataforma inexistente"));
+            jogoAntigo.setPlataforma(plataforma);
+        }
         repository.save(jogoAntigo);
 
         return jogoAntigo;
