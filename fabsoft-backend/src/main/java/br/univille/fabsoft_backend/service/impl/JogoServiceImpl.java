@@ -37,8 +37,8 @@ public class JogoServiceImpl implements JogoService {
         jogoAntigo.setNome(jogo.getNome());
         jogoAntigo.setDescricao(jogo.getDescricao());
         jogoAntigo.setDataLancamento(jogo.getDataLancamento());
-        jogoAntigo.setCategoriaId(jogo.getCategoriaId());
-        jogoAntigo.setPlataformaId(jogo.getPlataformaId());
+        jogoAntigo.setCategoria(jogo.getCategoria());
+        jogoAntigo.setPlataforma(jogo.getPlataforma());
         
       
         repository.save(jogoAntigo);
