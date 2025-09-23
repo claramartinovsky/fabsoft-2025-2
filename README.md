@@ -72,7 +72,6 @@ classDiagram
     Colecao "1" --> "*" Status
     Jogo "1" --> "*" Plataforma
     Jogo "1" --> "*" Categoria
-    Jogo "*" --> "1" API_Integracao
     Status "*" --> "1" StatusEnum
     Avaliacao "*" --> "1" Jogo
     Resenha "*" --> "1" Jogo
@@ -177,17 +176,5 @@ classDiagram
         +setId(id: long) void
         +getNome() String
         +setNome(nome: String) void
-    }
-
-    class API_Integracao {
-        -id : long
-        -nome : String
-        -url : String
-        +getId() long
-        +setId(id: long) void
-        +getNome() String
-        +setNome(nome: String) void
-        +getUrl() String
-        +setUrl(url: String) void
     }
 ```    
