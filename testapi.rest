@@ -7,7 +7,7 @@ POST http://localhost:8080/api/v1/jogos
 Content-Type: application/json
 
 {
-  "categoria": { "id": 2 },
+  "categoria": { "id": 1 },
   "dataLancamento": "2025-09-11",
   "plataforma": { "id": 2 },
   "descricao": "bom",
@@ -54,4 +54,29 @@ Content-Type: application/json
 
 ### DELETE categoria
 DELETE http://localhost:8080/api/v1/categorias/1
+Content-Type: application/json
+
+####### Plataforma #######
+
+### GET plataforma
+GET http://localhost:8080/api/v1/plataformas
+Content-Type: application/json
+### POST plataforma
+POST http://localhost:8080/api/v1/plataformas
+Content-Type: application/json
+
+{
+  "nome": "Playstation 5"
+}
+
+### PUT plataforma
+PUT http://localhost:8080/api/v1/plataformas/1
+Content-Type: application/json
+
+{
+  "nome": "Xbox Series X"
+}
+
+### DELETE plataforma
+DELETE http://localhost:8080/api/v1/plataformas/1
 Content-Type: application/json
