@@ -1,17 +1,30 @@
 package br.univille.fabsoft_backend.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Resenha {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private long usuarioId;
-    private long jogoId;
+
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
+    @JsonIgnoreProperties({"resenhas"})
+    private Usuario usuario;
+
+    @ManyToOne
+    @JoinColumn(name = "jogo_id")
+    @JsonIgnoreProperties({"resenhas"})
+    private Jogo jogo;
+
     private String conteudo;
     
     public long getId() {
@@ -20,18 +33,21 @@ public class Resenha {
     public void setId(long id) {
         this.id = id;
     }
-    public long getUsuarioId() {
-        return usuarioId;
+
+    public Usuario getUsuario() {
+        return usuario;
     }
-    public void setUsuarioId(long usuarioId) {
-        this.usuarioId = usuarioId;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
-    public long getJogoId() {
-        return jogoId;
+
+    public Jogo getJogo() {
+        return jogo;
     }
-    public void setJogoId(long jogoId) {
-        this.jogoId = jogoId;
+    public void setJogo(Jogo jogo) {
+        this.jogo = jogo;
     }
+
     public String getConteudo() {
         return conteudo;
     }

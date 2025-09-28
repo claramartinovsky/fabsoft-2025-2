@@ -1,11 +1,15 @@
 package br.univille.fabsoft_backend.entity;
 
 import java.util.Date;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Usuario {
@@ -16,6 +20,19 @@ public class Usuario {
     private String email;
     private String senha;
     private Date dataNascimento;
+
+    @OneToMany(mappedBy = "usuario")
+    @JsonIgnoreProperties("usuario")
+    private List<Resenha> resenhas;
+
+    public List<Resenha> getResenhas() {
+        return resenhas;
+    }
+
+    public void setResenhas(List<Resenha> resenhas) {
+        this.resenhas = resenhas;
+    }
+    
     public long getId() {
         return id;
     }

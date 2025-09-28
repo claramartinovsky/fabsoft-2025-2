@@ -111,3 +111,41 @@ Content-Type: application/json
 ### DELETE usuario
 DELETE http://localhost:8080/api/v1/usuarios/1
 Content-Type: application/json
+
+####### Resenhas #######
+
+### GET resenhas
+GET http://localhost:8080/api/v1/resenhas
+Content-Type: application/json
+
+### GET resenhas por usuario
+GET http://localhost:8080/api/v1/resenhas/usuario/1
+Content-Type: application/json
+
+### GET resenhas por jogo
+GET http://localhost:8080/api/v1/resenhas/jogo/1
+Content-Type: application/json
+
+### POST resenha
+POST http://localhost:8080/api/v1/resenhas
+Content-Type: application/json
+
+{
+  "usuario": { "id": 1 },
+  "jogo": { "id": 1 },
+  "conteudo": "Muito bom! Recomendo."
+}
+
+### PUT resenha
+PUT http://localhost:8080/api/v1/resenhas/1
+Content-Type: application/json
+
+{
+  "usuario": { "id": 1 },
+  "jogo": { "id": 1 },
+  "conteudo": "Atualizei minha opinião, agora está incrível!"
+}
+
+### DELETE resenha
+DELETE http://localhost:8080/api/v1/resenhas/1
+Content-Type: application/json
