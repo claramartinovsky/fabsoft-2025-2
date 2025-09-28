@@ -47,18 +47,20 @@ public class JogoServiceImpl implements JogoService {
         jogoAntigo.setNome(jogo.getNome());
         jogoAntigo.setDescricao(jogo.getDescricao());
         jogoAntigo.setDataLancamento(jogo.getDataLancamento());
-        //jogoAntigo.setCategoria(jogo.getCategoria());
-        //jogoAntigo.setPlataforma(jogo.getPlataforma());
-         if (jogo.getCategoria() != null && jogo.getCategoria().getId() > 0) {
-            Categoria categoria = categoriaRepository.findById(jogo.getCategoria().getId())
-                .orElseThrow(() -> new Exception("Categoria inexistente"));
-            jogoAntigo.setCategoria(categoria);
-        }
-      if (jogo.getPlataforma() != null && jogo.getPlataforma().getId() > 0) {
-            Plataforma plataforma = plataformaRepository.findById(jogo.getPlataforma().getId())
-                .orElseThrow(() -> new Exception("Plataforma inexistente"));
-            jogoAntigo.setPlataforma(plataforma);
-        }
+        
+         if (jogo.getCategorias() != null && !jogo.getCategorias().isEmpty()) {
+        List<Categoria> categorias = categoriaRepository.findAllById(
+            jogo.getCategorias().stream().map(Categoria::getId).toList()
+        );
+        jogoAntigo.setCategorias(categorias);
+    }
+
+      if (jogo.getPlataformas() != null && !jogo.getPlataformas().isEmpty()) {
+        List<Plataforma> plataformas = plataformaRepository.findAllById(
+            jogo.getPlataformas().stream().map(Plataforma::getId).toList()
+        );
+        jogoAntigo.setPlataformas(plataformas);
+    }
         repository.save(jogoAntigo);
 
         return jogoAntigo;

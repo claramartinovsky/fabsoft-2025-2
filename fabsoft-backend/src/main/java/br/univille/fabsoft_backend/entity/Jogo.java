@@ -1,12 +1,16 @@
 package br.univille.fabsoft_backend.entity;
 
 import java.util.Date;
+import java.util.List;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -24,12 +28,20 @@ public class Jogo {
     private Date dataLancamento;
 
 
-    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REFRESH})
-    private Categoria categoria;
+    @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.REFRESH})
+    @JoinTable(
+    name = "jogo_categoria",
+    joinColumns = @JoinColumn(name = "jogo_id"),
+    inverseJoinColumns = @JoinColumn(name = "categoria_id"))
+    private List<Categoria> categorias;
 
+    @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.REFRESH})
+    @JoinTable(
+    name = "jogo_plataforma",
+    joinColumns = @JoinColumn(name = "jogo_id"),
+    inverseJoinColumns = @JoinColumn(name = "plataforma_id"))
+    private List<Plataforma> plataformas;
 
-    @ManyToOne(cascade = {CascadeType.MERGE, CascadeType.REFRESH})
-    private Plataforma plataforma;
 
 
     public long getId() {
@@ -60,17 +72,17 @@ public class Jogo {
         this.dataLancamento = dataLancamento;
     }
 
-    public Categoria getCategoria() {
-        return categoria;
+    public List<Categoria> getCategorias() {
+        return categorias;
     }
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
+    public void setCategorias(List<Categoria> categorias) {
+        this.categorias = categorias;
     }
 
-    public Plataforma getPlataforma() {
-        return plataforma;
+    public List<Plataforma> getPlataformas() {
+        return plataformas;
     }
-    public void setPlataforma(Plataforma plataforma) {
-        this.plataforma = plataforma;
+    public void setPlataformas(List<Plataforma> plataformas) {
+        this.plataformas = plataformas;
     }
 }

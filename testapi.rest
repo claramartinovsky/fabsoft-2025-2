@@ -7,9 +7,9 @@ POST http://localhost:8080/api/v1/jogos
 Content-Type: application/json
 
 {
-  "categoria": { "id": 1 },
+  "categorias": [  { "id": 1 },  { "id": 3 }],
   "dataLancamento": "2025-09-11",
-  "plataforma": { "id": 2 },
+  "plataformas": [{ "id": 1 }, { "id": 2 }],
   "descricao": "bom",
   "nome": "ligadaslendas"
 }
@@ -20,9 +20,9 @@ PUT http://localhost:8080/api/v1/jogos/1
 Content-Type: application/json
 
 {
-  "categoria": { "id": 1 },
+  "categorias": [{ "id": 1 }],
   "dataLancamento": "2025-09-21",
-  "plataforma": { "id": 1 },
+  "plataformas": [{ "id": 1 }],
   "descricao": "ok",
   "nome": "csgo"
 }
@@ -41,7 +41,7 @@ POST http://localhost:8080/api/v1/categorias
 Content-Type: application/json
 
 {
-  "nome": "Ação"
+  "nome": "Terror"
 }
 
 ### PUT categoria
