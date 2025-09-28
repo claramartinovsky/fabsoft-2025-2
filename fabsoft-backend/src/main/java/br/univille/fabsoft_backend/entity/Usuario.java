@@ -25,6 +25,17 @@ public class Usuario {
     @JsonIgnoreProperties("usuario")
     private List<Resenha> resenhas;
 
+
+    @OneToMany(mappedBy = "usuario")
+    @JsonIgnoreProperties("usuario")
+    private List<Avaliacao> avaliacoes;
+
+
+    @OneToMany(mappedBy = "usuario")
+    @JsonIgnoreProperties("usuario")
+    private List<Colecao> colecoes;
+
+
     public List<Resenha> getResenhas() {
         return resenhas;
     }
@@ -32,7 +43,23 @@ public class Usuario {
     public void setResenhas(List<Resenha> resenhas) {
         this.resenhas = resenhas;
     }
-    
+
+    public List<Avaliacao> getAvaliacoes() {
+        return avaliacoes;
+    }
+
+    public void setAvaliacoes(List<Avaliacao> avaliacoes) {
+        this.avaliacoes = avaliacoes;
+    }
+
+    public List<Colecao> getColecoes() {
+        return colecoes;
+    }
+
+    public void setColecoes(List<Colecao> colecoes) {
+        this.colecoes = colecoes;
+    }
+
     public long getId() {
         return id;
     }

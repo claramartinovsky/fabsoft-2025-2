@@ -69,10 +69,8 @@ classDiagram
     Usuario "1" --> "*" Avaliacao
     Usuario "1" --> "*" Resenha
     Colecao "1" --> "*" Jogo
-    Colecao "1" --> "*" Status
     Jogo "1" --> "*" Plataforma
     Jogo "1" --> "*" Categoria
-    Status "*" --> "1" StatusEnum
     Avaliacao "*" --> "1" Jogo
     Resenha "*" --> "1" Jogo
 
@@ -120,27 +118,11 @@ classDiagram
         +setDataLancamento(dataLancamento: Date) void
     }
 
-    class Status {
-        -id : long
-        -nome : String
-        +getId() long
-        +setId(id: long) void
-        +getNome() String
-        +setNome(nome: String) void
-    }
-
-    class StatusEnum {
-        -status : String
-        +getStatus() String
-        +setStatus(status: String) void
-    }
-
     class Avaliacao {
         -id : long
         -usuarioId : long
         -jogoId : long
         -nota : int
-        -comentario : String
         +getId() long
         +setId(id: long) void
         +getNota() int

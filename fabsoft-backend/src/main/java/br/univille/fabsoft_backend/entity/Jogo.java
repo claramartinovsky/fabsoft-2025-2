@@ -32,30 +32,55 @@ public class Jogo {
 
     @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.REFRESH})
     @JoinTable(
-    name = "jogo_categoria",
-    joinColumns = @JoinColumn(name = "jogo_id"),
-    inverseJoinColumns = @JoinColumn(name = "categoria_id"))
+        name = "jogo_categoria",
+        joinColumns = @JoinColumn(name = "jogo_id"),
+        inverseJoinColumns = @JoinColumn(name = "categoria_id"))
     private List<Categoria> categorias;
+
 
     @ManyToMany(cascade = {CascadeType.MERGE, CascadeType.REFRESH})
     @JoinTable(
-    name = "jogo_plataforma",
-    joinColumns = @JoinColumn(name = "jogo_id"),
-    inverseJoinColumns = @JoinColumn(name = "plataforma_id"))
+        name = "jogo_plataforma",
+        joinColumns = @JoinColumn(name = "jogo_id"),
+        inverseJoinColumns = @JoinColumn(name = "plataforma_id"))
     private List<Plataforma> plataformas;
+
 
     @OneToMany(mappedBy = "jogo")
     @JsonIgnoreProperties("jogo")
     private List<Resenha> resenhas;
 
-    public List<Resenha> getResenhas() {
-       return resenhas;
-    }   
+ 
+    @OneToMany(mappedBy = "jogo")
+    @JsonIgnoreProperties("jogo")
+    private List<Avaliacao> avaliacoes;
 
+
+    @ManyToMany(mappedBy = "jogos")
+    @JsonIgnoreProperties("jogos")
+    private List<Colecao> colecoes;
+
+  
+    public List<Resenha> getResenhas() {
+        return resenhas;
+    }   
     public void setResenhas(List<Resenha> resenhas) {
-       this.resenhas = resenhas;
+        this.resenhas = resenhas;
     }
 
+    public List<Avaliacao> getAvaliacoes() {
+        return avaliacoes;
+    }
+    public void setAvaliacoes(List<Avaliacao> avaliacoes) {
+        this.avaliacoes = avaliacoes;
+    }
+
+    public List<Colecao> getColecoes() {
+        return colecoes;
+    }
+    public void setColecoes(List<Colecao> colecoes) {
+        this.colecoes = colecoes;
+    }
 
     public long getId() {
         return id;
