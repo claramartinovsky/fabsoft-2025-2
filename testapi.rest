@@ -80,3 +80,34 @@ Content-Type: application/json
 ### DELETE plataforma
 DELETE http://localhost:8080/api/v1/plataformas/1
 Content-Type: application/json
+
+####### Usuário #######
+
+### GET usuario
+GET http://localhost:8080/api/v1/usuarios
+Content-Type: application/json
+### POST usuario
+POST http://localhost:8080/api/v1/usuarios
+Content-Type: application/json
+
+{
+  "nome": "Fulano da Silva",
+  "email": "fulano@email.com",
+  "senha": "123456",
+  "dataNascimento": "1995-08-20"
+}
+
+### PUT usuario
+PUT http://localhost:8080/api/v1/usuarios/1
+Content-Type: application/json
+
+{
+  "nome": "Ciclano da Silva",
+  "email": "clicano@email.com",
+  "senha": "54321",
+  "dataNascimento": "1995-08-21"
+}
+
+### DELETE usuario
+DELETE http://localhost:8080/api/v1/usuarios/1
+Content-Type: application/json
