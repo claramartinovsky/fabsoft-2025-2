@@ -23,7 +23,6 @@ public class Colecao {
     )
     private Set<Jogo> jogos = new HashSet<>();
 
-    // Getters e Setters
     public long getId() {
         return id;
     }

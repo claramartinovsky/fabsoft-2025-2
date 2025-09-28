@@ -1,5 +1,7 @@
 package br.univille.fabsoft_backend.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,10 +17,12 @@ public class Avaliacao {
 
     @ManyToOne
     @JoinColumn(name = "usuario_id")
+    @JsonIgnoreProperties({"avaliacoes"})
     private Usuario usuario;
 
     @ManyToOne
     @JoinColumn(name = "jogo_id")
+    @JsonIgnoreProperties({"avaliacoes"})
     private Jogo jogo;
 
     private int nota;
