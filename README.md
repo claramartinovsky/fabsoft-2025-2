@@ -145,8 +145,6 @@ classDiagram
         +setId(id: long) void
         +getNota() int
         +setNota(nota: int) void
-        +getComentario() String
-        +setComentario(comentario: String) void
     }
 
     class Resenha {

@@ -4,44 +4,51 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Avaliacao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private long usuarioId;
-    private long jogoId;
+
+    @ManyToOne
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
+
+    @ManyToOne
+    @JoinColumn(name = "jogo_id")
+    private Jogo jogo;
+
     private int nota;
-    private String comentario;
+
     public long getId() {
         return id;
     }
     public void setId(long id) {
         this.id = id;
     }
-    public long getUsuarioId() {
-        return usuarioId;
+
+    public Usuario getUsuario() {
+        return usuario;
     }
-    public void setUsuarioId(long usuarioId) {
-        this.usuarioId = usuarioId;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
-    public long getJogoId() {
-        return jogoId;
+
+    public Jogo getJogo() {
+        return jogo;
     }
-    public void setJogoId(long jogoId) {
-        this.jogoId = jogoId;
+    public void setJogo(Jogo jogo) {
+        this.jogo = jogo;
     }
+
     public int getNota() {
         return nota;
     }
     public void setNota(int nota) {
         this.nota = nota;
     }
-    public String getComentario() {
-        return comentario;
-    }
-    public void setComentario(String comentario) {
-        this.comentario = comentario;
-    }
 }
+

@@ -149,3 +149,42 @@ Content-Type: application/json
 ### DELETE resenha
 DELETE http://localhost:8080/api/v1/resenhas/1
 Content-Type: application/json
+
+####### Avaliação #######
+
+### GET avaliacoes
+GET http://localhost:8080/api/v1/avaliacoes
+Content-Type: application/json
+
+### GET avaliacoes por usuario
+GET http://localhost:8080/api/v1/avaliacoes/usuario/1
+Content-Type: application/json
+
+### GET avaliacoes por jogo
+GET http://localhost:8080/api/v1/avaliacoes/jogo/1
+Content-Type: application/json
+
+### POST avaliacao
+POST http://localhost:8080/api/v1/avaliacoes
+Content-Type: application/json
+
+{
+  "usuario": { "id": 1 },
+  "jogo": { "id": 1 },
+  "nota": 4
+}
+
+### PUT avaliacao
+PUT http://localhost:8080/api/v1/avaliacoes/1
+Content-Type: application/json
+
+{
+  "usuario": { "id": 1 },
+  "jogo": { "id": 1 },
+  "nota": 5
+}
+
+### DELETE avaliacao
+DELETE http://localhost:8080/api/v1/avaliacoes/1
+Content-Type: application/json
+
