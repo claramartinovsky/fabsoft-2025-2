@@ -4,9 +4,9 @@ Clara Meister Martinovsky e Guilherme Torres Fiedler.
 ## Proposta de projeto 
 - Rede Social de avaliação de jogos: 
 	- cadastro e organização da coleção; 
-	- marcar status de jogo; 
-	- avaliações e resenhas; 
-	- APIs para dados de jogos
+	- avaliações;
+ 	- resenhas; 
+	
 <s>
 - Aplicativo de Diário criativo: 
 	- criação e edição de entrada multimídia(áudio, imagens, desenhos); 
