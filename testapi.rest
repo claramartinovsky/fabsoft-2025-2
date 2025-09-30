@@ -7,7 +7,7 @@ POST http://localhost:8080/api/v1/jogos
 Content-Type: application/json
 
 {
-  "categorias": [  { "id": 1 },  { "id": 3 }],
+  "categorias": [  { "id": 1 },  { "id": 2 }],
   "dataLancamento": "2025-09-11",
   "plataformas": [{ "id": 1 }, { "id": 2 }],
   "descricao": "jogo moba",
@@ -132,7 +132,7 @@ Content-Type: application/json
 
 {
   "usuario": { "id": 1 },
-  "jogo": { "id": 3 },
+  "jogo": { "id": 2 },
   "conteudo": "Muito bom! Recomendo."
 }
 
@@ -161,7 +161,7 @@ GET http://localhost:8080/api/v1/avaliacoes/usuario/1
 Content-Type: application/json
 
 ### GET avaliacoes por jogo
-GET http://localhost:8080/api/v1/avaliacoes/jogo/1
+GET http://localhost:8080/api/v1/avaliacoes/jogo/2
 Content-Type: application/json
 
 ### POST avaliacao
@@ -170,7 +170,7 @@ Content-Type: application/json
 
 {
   "usuario": { "id": 1 },
-  "jogo": { "id": 3 },
+  "jogo": { "id": 2 },
   "nota": 4
 }
 

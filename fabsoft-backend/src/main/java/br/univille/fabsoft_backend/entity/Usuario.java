@@ -27,7 +27,7 @@ public class Usuario {
 
 
     @OneToMany(mappedBy = "usuario")
-    @JsonIgnoreProperties("usuario")
+    @JsonIgnoreProperties({"usuario", "jogo"})
     private List<Avaliacao> avaliacoes;
 
 
