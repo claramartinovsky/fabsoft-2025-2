@@ -54,7 +54,7 @@ Como usuário, eu gostaria de filtrar os resultados da pesquisa por categoria, p
 
 Integração com APIs de Dados de Jogos
 
-Como desenvolvedor, eu gostaria de integrar a plataforma com APIs externas para obter dados atualizados sobre jogos, como informações de lançamento e atualizações.
+Como desenvolvedor, eu gostaria de integrar na plataforma dados atualizados sobre jogos, como informações de lançamento e atualizações.
 
 ## Aula 19/08
 ## Diagrama de entidades
