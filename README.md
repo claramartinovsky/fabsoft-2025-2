@@ -52,7 +52,7 @@ Pesquisa por Jogos
 Como usuário, eu gostaria de pesquisar por jogos na plataforma para descobrir novos títulos.
 Como usuário, eu gostaria de filtrar os resultados da pesquisa por categoria, plataforma ou avaliação para encontrar jogos que atendam aos meus interesses.
 
-Integração com APIs de Dados de Jogos
+Integração de Dados de Jogos
 
 Como desenvolvedor, eu gostaria de integrar na plataforma dados atualizados sobre jogos, como informações de lançamento e atualizações.
 
