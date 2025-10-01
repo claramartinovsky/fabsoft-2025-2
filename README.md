@@ -36,10 +36,6 @@ Como usuário, eu gostaria de selecionar jogos na plataforma para organizar minh
 Como usuário, eu gostaria de visualizar informações detalhadas sobre cada jogo, como descrição, avaliações e imagens, para tomar decisões informadas.
 Como usuário, eu gostaria de explorar listas de jogos populares, mais esperados ou lançamentos futuros para descobrir novos títulos.
 
-Status de Jogo
-
-Como usuário, eu gostaria de marcar o status de cada jogo (ex: "Jogado", "Em andamento", "Não jogado") para acompanhar meu progresso.
-Como usuário, eu gostaria de filtrar minha coleção por status para visualizar rapidamente os jogos em diferentes estágios.
 
 Avaliações e Resenhas
 
