@@ -4,9 +4,9 @@ Clara Meister Martinovsky e Guilherme Torres Fiedler.
 ## Proposta de projeto 
 - Rede Social de avaliação de jogos: 
 	- cadastro e organização da coleção; 
-	- marcar status de jogo; 
-	- avaliações e resenhas; 
-	- APIs para dados de jogos
+	- avaliações;
+ 	- resenhas; 
+	
 <s>
 - Aplicativo de Diário criativo: 
 	- criação e edição de entrada multimídia(áudio, imagens, desenhos); 
@@ -36,10 +36,6 @@ Como usuário, eu gostaria de selecionar jogos na plataforma para organizar minh
 Como usuário, eu gostaria de visualizar informações detalhadas sobre cada jogo, como descrição, avaliações e imagens, para tomar decisões informadas.
 Como usuário, eu gostaria de explorar listas de jogos populares, mais esperados ou lançamentos futuros para descobrir novos títulos.
 
-Status de Jogo
-
-Como usuário, eu gostaria de marcar o status de cada jogo (ex: "Jogado", "Em andamento", "Não jogado") para acompanhar meu progresso.
-Como usuário, eu gostaria de filtrar minha coleção por status para visualizar rapidamente os jogos em diferentes estágios.
 
 Avaliações e Resenhas
 
@@ -52,9 +48,9 @@ Pesquisa por Jogos
 Como usuário, eu gostaria de pesquisar por jogos na plataforma para descobrir novos títulos.
 Como usuário, eu gostaria de filtrar os resultados da pesquisa por categoria, plataforma ou avaliação para encontrar jogos que atendam aos meus interesses.
 
-Integração com APIs de Dados de Jogos
+Integração de Dados de Jogos
 
-Como desenvolvedor, eu gostaria de integrar a plataforma com APIs externas para obter dados atualizados sobre jogos, como informações de lançamento e atualizações.
+Como desenvolvedor, eu gostaria de integrar na plataforma dados atualizados sobre jogos, como informações de lançamento e atualizações.
 
 ## Aula 19/08
 ## Diagrama de entidades
