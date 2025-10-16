@@ -1,5 +1,15 @@
 <main class="container">
+    <h2>Usuários</h2>
     <table class="table">
-        
+        <thead>
+            <tr>
+                <th>Nome</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let umUsuario of listaUsuarios">
+                <td>{{umUsuario.nome}}</td>
+            </tr>
+        </tbody>
     </table>
 </main>
