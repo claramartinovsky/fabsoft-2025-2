@@ -4,11 +4,17 @@
         <thead>
             <tr>
                 <th>Nome</th>
+                <th>Senha</th>
+                <th>E-mail</th>
+                <th>Data Nascimento</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let umUsuario of listaUsuarios">
                 <td>{{umUsuario.nome}}</td>
+                <td>{{umUsuario.senha}}</td>
+                <td>{{umUsuario.email}}</td>
+                <td>{{umUsuario.dataNascimento | date: 'dd/MM/yyyy' }}</td>
             </tr>
         </tbody>
     </table>
