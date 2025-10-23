@@ -15,5 +15,18 @@ import { Router } from '@angular/router';
 })
 
 export class FormUsuario {
+  usuario: Usuario = new Usuario();
+
+  constructor(
+    private usuarioService:UsuarioService,
+    private router:Router
+  ){}
+
+  salvar(){
+    this.usuarioService.saveUsuario(this.usuario)
+      .subscribe(resultado => {
+        this.router.navigate(['usuarios'])
+      })
+  }
 
 }
