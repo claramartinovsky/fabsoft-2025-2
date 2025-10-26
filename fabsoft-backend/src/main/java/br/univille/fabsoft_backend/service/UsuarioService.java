@@ -8,4 +8,5 @@ public interface UsuarioService {
     Usuario save(Usuario usuario);
     Usuario update(long id, Usuario usuario) throws Exception;
     Usuario delete(long id) throws Exception;
+    Usuario getById(long id);
 }

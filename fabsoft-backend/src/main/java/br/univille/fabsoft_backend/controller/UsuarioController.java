@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.*;
 
 import br.univille.fabsoft_backend.entity.Usuario;
 import br.univille.fabsoft_backend.service.UsuarioService;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @RestController
 @RequestMapping("/api/v1/usuarios")
@@ -34,6 +37,21 @@ public class UsuarioController {
         }
         return ResponseEntity.badRequest().build();
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Usuario>
+                getUsuarioById(@PathVariable long id){
+            
+        var usuario = service.getById(id);
+        if(usuario == null)
+            return ResponseEntity.noContent().build();
+        
+        return new
+            ResponseEntity<Usuario>(usuario, HttpStatus.OK);
+
+    }
+    
+
 
     @PutMapping("/{id}")
     public ResponseEntity<Usuario> update(@RequestBody Usuario usuario, @PathVariable long id) {

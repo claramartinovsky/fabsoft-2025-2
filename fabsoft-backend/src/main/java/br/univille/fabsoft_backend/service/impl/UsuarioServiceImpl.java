@@ -49,4 +49,13 @@ public class UsuarioServiceImpl implements UsuarioService {
         repository.delete(usuarioAntigo);
         return usuarioAntigo;
     }
+
+    @Override
+    public Usuario getById(long id) {
+        var retorno = repository.findById(id);
+        if(retorno.isPresent())
+            return retorno.get();
+        
+        return null;
+    }
 }

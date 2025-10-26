@@ -8,6 +8,7 @@
                 <th>Senha</th>
                 <th>E-mail</th>
                 <th>Data Nascimento</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -16,6 +17,11 @@
                 <td>{{umUsuario.senha}}</td>
                 <td>{{umUsuario.email}}</td>
                 <td>{{umUsuario.dataNascimento | date: 'dd/MM/yyyy' }}</td>
+                <td> <button 
+                        (click)="alterar(umUsuario)"    
+                    class="btn btn-secondary">
+                    Alterar
+                </button></td>
             </tr>
         </tbody>
     </table>
