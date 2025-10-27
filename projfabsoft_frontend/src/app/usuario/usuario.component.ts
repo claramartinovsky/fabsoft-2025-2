@@ -31,4 +31,7 @@ export class UsuarioComponent {
   this.router.navigate(['usuarios/novo']);
 }    
 
+  alterar(usuario:Usuario){
+    this.router.navigate(['usuarios/alterar', usuario.id]);
+  }
 }

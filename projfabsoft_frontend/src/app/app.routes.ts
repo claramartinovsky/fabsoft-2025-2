@@ -4,5 +4,6 @@ import { FormUsuario } from './form-usuario/form-usuario';
 
 export const routes: Routes = [
     { path: 'usuarios', component: UsuarioComponent },
-    { path: 'usuarios/novo', component: FormUsuario }
+    { path: 'usuarios/novo', component: FormUsuario },
+    { path: 'usuarios/alterar/:id', component: FormUsuario }
 ];
