@@ -26,7 +26,7 @@ export class UsuarioService {
     return this.http.get<Usuario>(this.apiURL + '/' + id)
   }
   
-  excluirCliente(id: string){
+  excluirUsuario(id: string){
     return this.http.delete<Usuario>(this.apiURL + '/' + id)
   }
 }
