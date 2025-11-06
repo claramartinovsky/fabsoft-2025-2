@@ -1,9 +1,13 @@
 import { Routes } from '@angular/router';
 import { UsuarioComponent } from './usuario/usuario.component';
 import { FormUsuario } from './form-usuario/form-usuario';
+import { CategoriaComponent } from './categoria.component/categoria.component';
+
 
 export const routes: Routes = [
     { path: 'usuarios', component: UsuarioComponent },
     { path: 'usuarios/novo', component: FormUsuario },
-    { path: 'usuarios/alterar/:id', component: FormUsuario }
+    { path: 'usuarios/alterar/:id', component: FormUsuario },
+
+    { path: 'categorias', component: CategoriaComponent }
 ];

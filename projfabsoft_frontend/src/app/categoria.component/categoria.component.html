@@ -1,0 +1,15 @@
+<main class="container">
+    <h2>Categorias</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let umaCategoria of listaCategorias">
+                <td>{{umaCategoria.nome}}</td>
+            </tr>
+        </tbody>
+    </table>
+</main>
