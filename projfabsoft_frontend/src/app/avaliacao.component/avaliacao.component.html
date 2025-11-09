@@ -1,0 +1,15 @@
+<main class="container">
+    <h2>Avaliações</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nota</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let umaAvaliacao of listaAvaliacoes">
+                <td>{{umaAvaliacao.nota}}</td>
+            </tr>
+        </tbody>
+    </table>
+</main>

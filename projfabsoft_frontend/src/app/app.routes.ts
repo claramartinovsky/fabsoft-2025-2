@@ -3,6 +3,7 @@ import { UsuarioComponent } from './usuario/usuario.component';
 import { FormUsuario } from './form-usuario/form-usuario';
 import { CategoriaComponent } from './categoria.component/categoria.component';
 import { FormCategoria } from './form-categoria/form-categoria';
+import { AvaliacaoComponent } from './avaliacao.component/avaliacao.component';
 
 export const routes: Routes = [
     { path: 'usuarios', component: UsuarioComponent },
@@ -11,6 +12,8 @@ export const routes: Routes = [
 
     { path: 'categorias', component: CategoriaComponent },
     { path: 'categorias/novo', component: FormCategoria },
-    { path: 'categorias/alterar/:id', component: FormCategoria }
+    { path: 'categorias/alterar/:id', component: FormCategoria },
+
+    { path: 'avaliacoes', component: AvaliacaoComponent }
 
 ];
