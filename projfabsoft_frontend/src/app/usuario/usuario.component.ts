@@ -42,8 +42,9 @@ private usuarioSelecionado!: Usuario;
   }
 
   abrirConfirmacao(usuario:Usuario){
-    this.usuarioSelecionado = usuario
-    this.modal = new bootstrap.Modal(this.modalElement.nativeElement)
+    this.usuarioSelecionado = usuario;
+    this.modal = new bootstrap.Modal(this.modalElement.nativeElement);
+    this.modal.show();
   }
 
   fecharConfirmacao() {
@@ -51,12 +52,14 @@ private usuarioSelecionado!: Usuario;
 }
 
   confirmarExclusao() {
-    this.usuarioService.excluirUsuario(this.usuarioSelecionado.id.toString()).subscribe(
+    this.usuarioService.excluirUsuario(this.usuarioSelecionado.id.toString())
+    .subscribe(
         () => {
             this.fecharConfirmacao();
-            this.usuarioService.getUsuarios().subscribe(
+            this.usuarioService.getUsuarios()
+            .subscribe(
               usuarios => {
-                this.listaUsuarios = usuarios;
+                this.listaUsuarios = usuarios
               }
             );
         },
