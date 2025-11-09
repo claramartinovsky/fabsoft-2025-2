@@ -15,6 +15,13 @@ export class CategoriaService {
   }
 
   saveCategoria(categoria:Categoria){
+    if(categoria.id){
+      return this.http.put(this.apiURL + '/' + categoria.id, categoria);
+    }
     return this.http.post(this.apiURL,categoria);
+  }
+
+  getCategoriaById(id: any) {
+    return this.http.get<Categoria>(this.apiURL + '/' + id);
   }
 }

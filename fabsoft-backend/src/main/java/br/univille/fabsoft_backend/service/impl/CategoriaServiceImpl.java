@@ -48,4 +48,13 @@ public class CategoriaServiceImpl implements CategoriaService {
         repository.delete(categoriaAntiga);
         return categoriaAntiga;
     }
+
+    @Override
+    public Categoria getById(long id) {
+        var retorno = repository.findById(id);
+        if(retorno.isPresent())
+            return retorno.get();
+        
+        return null;
+    }
 }

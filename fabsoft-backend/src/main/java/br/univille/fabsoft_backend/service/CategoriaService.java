@@ -8,4 +8,5 @@ public interface CategoriaService {
     Categoria save(Categoria categoria);
     Categoria update(long id, Categoria categoria) throws Exception;
     Categoria delete(long id) throws Exception;
+    Categoria getById(long id);
 }

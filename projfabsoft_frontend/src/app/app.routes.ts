@@ -10,5 +10,7 @@ export const routes: Routes = [
     { path: 'usuarios/alterar/:id', component: FormUsuario },
 
     { path: 'categorias', component: CategoriaComponent },
-    { path: 'categorias/novo', component: FormCategoria }
+    { path: 'categorias/novo', component: FormCategoria },
+    { path: 'categorias/alterar/:id', component: FormCategoria }
+
 ];

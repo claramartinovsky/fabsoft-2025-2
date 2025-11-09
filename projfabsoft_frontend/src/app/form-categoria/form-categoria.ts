@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CategoriaService } from '../service/categoria.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { Categoria } from '../model/categoria';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
@@ -18,9 +18,17 @@ export class FormCategoria {
 
     constructor(
       private categoriaService:CategoriaService,
-      private router:Router
-    ){}
+      private router:Router,
+      private activeRouter: ActivatedRoute
+    ){
+      const id = this.activeRouter.snapshot.paramMap.get('id');
 
+      if (id) {
+          this.categoriaService.getCategoriaById(id).subscribe(cliente => {
+            this.categoria = cliente;
+        });
+    }
+  }
     salvar(){
       this.categoriaService.saveCategoria(this.categoria)
         .subscribe(resultado => {

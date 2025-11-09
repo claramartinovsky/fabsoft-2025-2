@@ -29,5 +29,9 @@ export class CategoriaComponent {
 
   novo(){
   this.router.navigate(['categorias/novo']);
-}    
+  }
+  
+  alterar(categoria:Categoria){
+    this.router.navigate(['categorias/alterar', categoria.id]);
+  }
 }

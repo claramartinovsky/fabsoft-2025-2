@@ -42,6 +42,19 @@ public class CategoriaController {
         return ResponseEntity.badRequest().build();
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<Categoria>
+                getCategoriaById(@PathVariable long id){
+            
+        var categoria = service.getById(id);
+        if(categoria == null)
+            return ResponseEntity.noContent().build();
+        
+        return new
+            ResponseEntity<Categoria>(categoria, HttpStatus.OK);
+
+    }
+
     @PutMapping("/{id}")
     public ResponseEntity<Categoria> update(@RequestBody Categoria categoria, @PathVariable long id) {
         if (id <= 0 || categoria == null) {
@@ -55,6 +68,7 @@ public class CategoriaController {
             return ResponseEntity.notFound().build();
         }
     }
+
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Categoria> update(@PathVariable long id) {
