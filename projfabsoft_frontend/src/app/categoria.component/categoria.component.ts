@@ -3,18 +3,22 @@ import { Categoria } from '../model/categoria';
 import { CategoriaService } from '../service/categoria.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-categoria.component',
   imports: [HttpClientModule,CommonModule],
   templateUrl: './categoria.component.html',
   styleUrl: './categoria.component.css',
-  providers: [CategoriaService]
+  providers: [CategoriaService, Router]
 })
 export class CategoriaComponent {
   listaCategorias: Categoria[] = [];
 
-  constructor(private categoriaService: CategoriaService) {}
+  constructor(
+    private categoriaService: CategoriaService,
+    private router:Router
+  ) {}
 
   ngOnInit() {
     console.log("Carregando categorias...");
@@ -22,4 +26,8 @@ export class CategoriaComponent {
       this.listaCategorias = categorias;
     });
   }
+
+  novo(){
+  this.router.navigate(['categorias/novo']);
+}    
 }

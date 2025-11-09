@@ -13,4 +13,8 @@ export class CategoriaService {
   getCategorias(){
     return this.http.get<Categoria[]>(this.apiURL);
   }
+
+  saveCategoria(categoria:Categoria){
+    return this.http.post(this.apiURL,categoria);
+  }
 }
