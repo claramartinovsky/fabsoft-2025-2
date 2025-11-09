@@ -24,4 +24,8 @@ export class CategoriaService {
   getCategoriaById(id: any) {
     return this.http.get<Categoria>(this.apiURL + '/' + id);
   }
+
+  excluirCategoria(id: string){
+  return this.http.delete<Categoria>(this.apiURL + '/' + id);
+}
 }
