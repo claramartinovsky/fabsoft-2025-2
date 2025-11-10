@@ -1,0 +1,15 @@
+<main class="container">
+    <h2>Jogos</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let umJogo of listaJogos">
+                <td>{{umJogo.nome}}</td>
+            </tr>
+        </tbody>
+    </table>
+</main>
