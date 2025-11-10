@@ -90,4 +90,13 @@ public class AvaliacaoServiceImpl implements AvaliacaoService {
     public List<Avaliacao> getByJogo(long jogoId) {
         return repository.findByJogoId(jogoId);
     }
+
+    @Override
+    public Avaliacao getById(long id) {
+        var retorno = repository.findById(id);
+        if(retorno.isPresent())
+            return retorno.get();
+        
+        return null;
+    }    
 }

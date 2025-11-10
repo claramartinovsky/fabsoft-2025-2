@@ -3,7 +3,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AvaliacaoService } from '../service/avaliacao.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Avaliacao } from '../model/avaliacao';
 
 @Component({
@@ -18,8 +18,15 @@ export class FormAvaliacao {
 
   constructor(
     private avaliacaoService:AvaliacaoService,
-    private router: Router
-  ){}
+    private router: Router,
+    private activeRouter: ActivatedRoute
+  ){
+    const id = this.activeRouter.snapshot.paramMap.get('id');
+
+    if(id) {
+      this.avaliacaoService.getAvaliacaoById(id).subscribe(avaliacao => {this.avaliacao = avaliacao} )
+    }
+  }
 
   salvar(){
     this.avaliacaoService.saveAvaliacoes(this.avaliacao)

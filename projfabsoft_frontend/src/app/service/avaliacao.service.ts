@@ -16,6 +16,13 @@ export class AvaliacaoService {
   }
 
   saveAvaliacoes(avaliacao: Avaliacao){
+    if(avaliacao.id){
+      return this.http.put(this.apiURL + '/' + avaliacao.id, avaliacao);
+    }
     return this.http.post(this.apiURL,avaliacao);
+  }
+
+  getAvaliacaoById(id: any) {
+    return this.http.get<Avaliacao>(this.apiURL + '/' + id);
   }
 }

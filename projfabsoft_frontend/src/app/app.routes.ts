@@ -17,5 +17,8 @@ export const routes: Routes = [
 
     { path: 'avaliacoes', component: AvaliacaoComponent },
     { path: 'avaliacoes/novo', component: FormAvaliacao },
+    {path: 'avaliacoes/alterar/:id', component: FormAvaliacao },
+
+    
 
 ];

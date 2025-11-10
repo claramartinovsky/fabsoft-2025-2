@@ -29,4 +29,8 @@ export class AvaliacaoComponent {
   novo(){
     this.router.navigate(['avaliacoes/novo'])
   }
+
+    alterar(avaliacao:Avaliacao){
+      this.router.navigate(['avaliacoes/alterar', avaliacao.id]);
+  }
 }

@@ -58,6 +58,13 @@ public class AvaliacaoController {
         return ResponseEntity.badRequest().build();
     }
 
+    @GetMapping("/{id}")	
+    public ResponseEntity<Avaliacao> getAvaliacaoId(@PathVariable Long id){
+        var avaliacao = service.getById(id);
+
+        return new ResponseEntity<Avaliacao>(avaliacao, HttpStatus.OK);
+    } 
+
     @PutMapping("/{id}")
     public ResponseEntity<Avaliacao> update(@PathVariable long id, @RequestBody Avaliacao avaliacao) {
         try {

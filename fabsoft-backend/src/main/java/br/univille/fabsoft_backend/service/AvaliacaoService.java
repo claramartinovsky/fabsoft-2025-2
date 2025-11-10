@@ -11,4 +11,6 @@ public interface AvaliacaoService {
 
     List<Avaliacao> getByUsuario(long usuarioId);
     List<Avaliacao> getByJogo(long jogoId);
+
+    Avaliacao getById(long id);
 }
