@@ -25,4 +25,8 @@ export class AvaliacaoService {
   getAvaliacaoById(id: any) {
     return this.http.get<Avaliacao>(this.apiURL + '/' + id);
   }
+
+  excluirAvaliacao(id: any){
+  return this.http.delete<Avaliacao>(this.apiURL + '/' + id);
+}
 }

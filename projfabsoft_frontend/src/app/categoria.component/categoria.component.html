@@ -11,11 +11,10 @@
             <tr *ngFor="let umaCategoria of listaCategorias">
                 <td>{{umaCategoria.nome}}</td>
                 <td><a (click)="alterar(umaCategoria)" 
-                    class="btn btn-secondary">Alterar</a></td>
-                <td>
-                <button 
-                    (click)="abrirConfirmacao(umaCategoria)"
-                class="btn btn-danger">Excluir</button>
+                    class="btn btn-secondary">Alterar</a>
+                    <button 
+                        (click)="abrirConfirmacao(umaCategoria)"
+                    class="btn btn-danger">Excluir</button>
                 </td>
             </tr>
         </tbody>
