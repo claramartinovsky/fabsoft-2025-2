@@ -1,0 +1,16 @@
+<main class="container">
+    <h2>Avaliacao</h2>
+    <div class="card">
+        <div class="card-body">
+            <div class="form-group">
+                <label for="txtNome">Nota</label>    
+                <input type="text" 
+                    [(ngModel)]="avaliacao.nota"
+                    class="form-control"
+                    id="txtNome">
+            </div>
+        </div>
+        <button (click)="salvar()" 
+        class="btn btn-primary">Salvar</button>
+    </div>
+</main>

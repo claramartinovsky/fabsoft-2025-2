@@ -14,4 +14,8 @@ export class AvaliacaoService {
   getAvaliacoes(){
     return this.http.get<Avaliacao[]>(this.apiURL);
   }
+
+  saveAvaliacoes(avaliacao: Avaliacao){
+    return this.http.post(this.apiURL,avaliacao);
+  }
 }
