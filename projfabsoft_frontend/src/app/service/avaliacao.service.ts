@@ -15,7 +15,7 @@ export class AvaliacaoService {
     return this.http.get<Avaliacao[]>(this.apiURL);
   }
 
-  saveAvaliacoes(avaliacao: Avaliacao){
+  saveAvaliacoes(avaliacao:Avaliacao){
     if(avaliacao.id){
       return this.http.put(this.apiURL + '/' + avaliacao.id, avaliacao);
     }
