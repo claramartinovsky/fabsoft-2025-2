@@ -14,4 +14,8 @@ export class JogoService {
     getJogos(){
      return this.http.get<Jogo[]>(this.apiURL);
   }
+
+  saveJogo(jogo:Jogo){
+    return this.http.post(this.apiURL,jogo);
+  }
 }

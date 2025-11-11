@@ -6,6 +6,7 @@ import { FormCategoria } from './form-categoria/form-categoria';
 import { AvaliacaoComponent } from './avaliacao.component/avaliacao.component';
 import { FormAvaliacao } from './form-avaliacao/form-avaliacao';
 import { JogoComponent } from './jogo.component/jogo.component';
+import { FormJogo } from './form-jogo/form-jogo';
 
 export const routes: Routes = [
     { path: 'usuarios', component: UsuarioComponent },
@@ -21,6 +22,7 @@ export const routes: Routes = [
     { path: 'avaliacoes/alterar/:id', component: FormAvaliacao },
 
     { path: 'jogos', component: JogoComponent },
+    { path: 'jogos/novo', component: FormJogo },
 
 
 
