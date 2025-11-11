@@ -26,5 +26,7 @@ export class JogoService {
     return this.http.get<Jogo>(this.apiURL + '/' + id);
   }
 
-  
+excluirJogo(id: any){
+  return this.http.delete<Jogo>(this.apiURL + '/' + id);
+} 
 }

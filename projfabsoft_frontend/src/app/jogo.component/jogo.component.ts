@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Jogo } from '../model/jogo';
 import { JogoService } from '../service/jogo.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import * as bootstrap from 'bootstrap';
 
 @Component({
   selector: 'app-jogo.component',
@@ -14,6 +15,11 @@ import { Router } from '@angular/router';
 })
 export class JogoComponent {
   listaJogos: Jogo[] = [];
+
+  @ViewChild('myModal') modalElement!: ElementRef;
+  private modal!: bootstrap.Modal;
+
+  private jogoSelecionado!: Jogo;
 
   constructor(private jogoService: JogoService,
     private router:Router
@@ -33,4 +39,30 @@ export class JogoComponent {
   alterar(jogo:Jogo){
       this.router.navigate(['jogos/alterar', jogo.id]);
   }
+
+abrirConfirmacao(jogo:Jogo) {
+    this.jogoSelecionado = jogo;
+    this.modal = new bootstrap.Modal(this.modalElement.nativeElement);
+    this.modal.show();
+}
+
+fecharConfirmacao() {
+  this.modal.hide();
+}
+
+confirmarExclusao() {
+    this.jogoService.excluirJogo(this.jogoSelecionado.id).subscribe(
+        () => {
+            this.fecharConfirmacao();
+            this.jogoService.getJogos().subscribe(
+              jogos => {
+                this.listaJogos = jogos;
+              }
+            );
+        },
+        error => {
+            console.error('Erro ao excluir cliente:', error);
+        }
+    );
+}
 };
