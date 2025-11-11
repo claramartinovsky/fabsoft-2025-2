@@ -8,6 +8,7 @@ import { FormAvaliacao } from './form-avaliacao/form-avaliacao';
 import { JogoComponent } from './jogo.component/jogo.component';
 import { FormJogo } from './form-jogo/form-jogo';
 import { PlataformaComponent } from './plataforma.component/plataforma.component';
+import { FormPlataforma } from './form-plataforma/form-plataforma';
 
 export const routes: Routes = [
     { path: 'usuarios', component: UsuarioComponent },
@@ -26,7 +27,8 @@ export const routes: Routes = [
     { path: 'jogos/novo', component: FormJogo },
     { path: 'jogos/alterar/:id', component: FormJogo },
 
-    { path: 'plataformas', component: PlataformaComponent }
+    { path: 'plataformas', component: PlataformaComponent },
+    { path: 'plataformas/novo', component: FormPlataforma },
 
 
 ];

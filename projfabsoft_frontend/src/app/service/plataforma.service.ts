@@ -13,4 +13,8 @@ export class PlataformaService {
   getPlataformas(){
     return this.http.get<Plataforma[]>(this.apiURL);
   }
+
+ savePlataforma(plataforma:Plataforma){
+  return this.http.post(this.apiURL,plataforma);
+  } 
 }
