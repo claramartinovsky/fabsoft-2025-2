@@ -63,7 +63,7 @@ export class AvaliacaoComponent {
             );
         },
         error => {
-            console.error('Erro ao excluir cliente:', error);
+            console.error('Erro ao excluir avaliação:', error);
         }
     );
 }
