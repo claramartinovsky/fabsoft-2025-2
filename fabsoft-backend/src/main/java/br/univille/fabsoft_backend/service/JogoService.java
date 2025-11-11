@@ -9,4 +9,6 @@ public interface JogoService {
     Jogo save(Jogo jogo);
     Jogo update(long id, Jogo jogo) throws Exception;
     Jogo delete(long id) throws Exception;
+
+    Jogo getById(long id);
 }

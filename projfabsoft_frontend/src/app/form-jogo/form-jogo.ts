@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { JogoService } from '../service/jogo.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -18,9 +18,17 @@ export class FormJogo {
 
     constructor(
       private jogoService:JogoService,
-      private router:Router
-    ){}
-
+      private router:Router,
+      private activeRouter: ActivatedRoute
+    ){
+      const id = this.activeRouter.snapshot.paramMap.get('id');
+        
+        if (id) {
+          this.jogoService.getJogoById(id).subscribe(jogo => {
+            this.jogo = jogo;
+        });
+    }
+  }
     salvar(){
       this.jogoService.saveJogo(this.jogo)
         .subscribe(resultado => {

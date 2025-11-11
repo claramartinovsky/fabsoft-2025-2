@@ -23,7 +23,7 @@ export const routes: Routes = [
 
     { path: 'jogos', component: JogoComponent },
     { path: 'jogos/novo', component: FormJogo },
-
+    { path: 'jogos/alterar/:id', component: FormJogo },
 
 
 ];

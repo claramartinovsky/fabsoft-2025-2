@@ -80,4 +80,14 @@ public class JogoServiceImpl implements JogoService {
         repository.delete(jogoAntigo);
         return jogoAntigo;
     }
+
+    @Override
+    public Jogo getById(long id) {
+        var retorno = repository.findById(id);
+        if(retorno.isPresent())
+            return retorno.get();
+        
+        return null;
+    }
+
 }

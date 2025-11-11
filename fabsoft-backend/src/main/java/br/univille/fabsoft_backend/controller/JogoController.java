@@ -55,6 +55,14 @@ public class JogoController {
         }
             
     }
+
+    @GetMapping("/{id}")	
+    public ResponseEntity<Jogo> getJogoId(@PathVariable Long id){
+        var jogo = service.getById(id);
+
+        return new ResponseEntity<Jogo>(jogo, HttpStatus.OK);
+    }
+
      @DeleteMapping("/{id}")
     public ResponseEntity<Jogo> 
         update(@PathVariable long id){

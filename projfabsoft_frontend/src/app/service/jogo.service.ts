@@ -16,6 +16,15 @@ export class JogoService {
   }
 
   saveJogo(jogo:Jogo){
+    if(jogo.id){
+      return this.http.put(this.apiURL + '/' + jogo.id, jogo);
+    }
     return this.http.post(this.apiURL,jogo);
   }
+
+  getJogoById(id: any) {
+    return this.http.get<Jogo>(this.apiURL + '/' + id);
+  }
+
+  
 }

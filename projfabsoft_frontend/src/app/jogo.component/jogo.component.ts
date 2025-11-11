@@ -28,4 +28,9 @@ export class JogoComponent {
 
   novo(){
   this.router.navigate(['jogos/novo']);
-}}
+}
+
+  alterar(jogo:Jogo){
+      this.router.navigate(['jogos/alterar', jogo.id]);
+  }
+};
