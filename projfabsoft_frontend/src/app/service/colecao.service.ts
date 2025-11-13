@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Colecao } from '../model/colecao';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -12,5 +13,9 @@ export class ColecaoService {
   getColecoes(){
     return this.http.get<Colecao[]>(this.apiURL);
   }
- 
+
+  saveColecao(colecao:Colecao){
+    return this.http.post(this.apiURL,colecao);
+  }
+
 }

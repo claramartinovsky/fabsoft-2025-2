@@ -1,0 +1,16 @@
+<main class="container">
+    <h2>Colecao</h2>
+    <div class="card">
+        <div class="card-body">
+            <div class="form-group">
+                <label for="txtNome">Nome</label>    
+                <input type="text" 
+                    [(ngModel)]="colecao.nome"
+                    class="form-control"
+                    id="txtNome">
+            </div>
+        </div>
+        <button (click)="salvar()" 
+        class="btn btn-primary">Salvar</button>
+    </div>
+</main>
