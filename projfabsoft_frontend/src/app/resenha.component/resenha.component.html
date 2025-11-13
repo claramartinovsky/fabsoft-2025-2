@@ -10,6 +10,8 @@
         <tbody>
             <tr *ngFor="let umaResenha of listaResenhas">
                 <td>{{umaResenha.conteudo}}</td>
+                <td><a (click)="alterar(umaResenha)" 
+                    class="btn btn-secondary">Alterar</a></td>
             </tr>
         </tbody>
     </table>

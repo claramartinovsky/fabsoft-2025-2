@@ -12,5 +12,7 @@ public interface ResenhaService {
 
     List<Resenha> getByUsuario(long usuarioId);
     List<Resenha> getByJogo(long jogoId);
+
+    Resenha getById(long id);
 }
 

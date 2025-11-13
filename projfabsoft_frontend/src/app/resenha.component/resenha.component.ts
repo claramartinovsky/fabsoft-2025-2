@@ -29,5 +29,9 @@ export class ResenhaComponent {
 
 novo(){
   this.router.navigate(['resenhas/novo']);
-}    
+}
+
+  alterar(resenha:Resenha){
+      this.router.navigate(['resenhas/alterar', resenha.id]);
+  }
 }

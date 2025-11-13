@@ -35,5 +35,6 @@ export const routes: Routes = [
 
     { path: 'resenhas', component: ResenhaComponent },
     { path: 'resenhas/novo', component: FormResenha },
+    { path: 'resenhas/alterar/:id', component: FormResenha },
 
 ];

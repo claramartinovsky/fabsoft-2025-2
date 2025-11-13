@@ -15,7 +15,15 @@ export class ResenhaService {
   }
 
   saveResenha(resenha:Resenha){
+    if(resenha.id){
+       return this.http.put(this.apiURL + '/' + resenha.id, resenha);
+    }
     return this.http.post(this.apiURL,resenha);
   }
+
+    getResenhaById(id: any) {
+    return this.http.get<Resenha>(this.apiURL + '/' + id);
+  }
+
 
 }

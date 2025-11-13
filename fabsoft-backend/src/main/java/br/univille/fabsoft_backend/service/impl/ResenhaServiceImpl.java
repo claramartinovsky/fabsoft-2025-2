@@ -90,5 +90,16 @@ public class ResenhaServiceImpl implements ResenhaService {
         repository.delete(resenhaAntiga);
         return resenhaAntiga;
     }
+
+
+    @Override
+    public Resenha getById(long id) {
+        var retorno = repository.findById(id);
+        if(retorno.isPresent())
+            return retorno.get();
+        
+        return null;
+    }
+
 }
 

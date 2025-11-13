@@ -58,7 +58,6 @@ public class ResenhaController {
     return ResponseEntity.badRequest().build();
 }
 
-
     @PutMapping("/{id}")
     public ResponseEntity<Resenha> update(@PathVariable long id, @RequestBody Resenha resenha) {
         try {
@@ -67,6 +66,13 @@ public class ResenhaController {
         } catch (Exception e) {
             return ResponseEntity.notFound().build();
         }
+    }
+
+    @GetMapping("/{id}")	
+    public ResponseEntity<Resenha> getResenhaId(@PathVariable Long id){
+        var resenha = service.getById(id);
+
+        return new ResponseEntity<Resenha>(resenha, HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
