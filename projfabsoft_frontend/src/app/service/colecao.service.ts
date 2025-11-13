@@ -25,4 +25,7 @@ export class ColecaoService {
     return this.http.get<Colecao>(this.apiURL + '/' + id);
   }
 
+excluirColecao(id: any){
+  return this.http.delete<Colecao>(this.apiURL + '/' + id);
+}
 }
