@@ -11,6 +11,7 @@ import { PlataformaComponent } from './plataforma.component/plataforma.component
 import { FormPlataforma } from './form-plataforma/form-plataforma';
 import { ResenhaComponent } from './resenha.component/resenha.component';
 import { FormResenha } from './form-resenha/form-resenha';
+import { ColecaoComponent } from './colecao.component/colecao.component';
 
 export const routes: Routes = [
     { path: 'usuarios', component: UsuarioComponent },
@@ -37,4 +38,6 @@ export const routes: Routes = [
     { path: 'resenhas/novo', component: FormResenha },
     { path: 'resenhas/alterar/:id', component: FormResenha },
 
+    { path: 'colecoes', component: ColecaoComponent },
+    
 ];
