@@ -9,6 +9,7 @@ import { JogoComponent } from './jogo.component/jogo.component';
 import { FormJogo } from './form-jogo/form-jogo';
 import { PlataformaComponent } from './plataforma.component/plataforma.component';
 import { FormPlataforma } from './form-plataforma/form-plataforma';
+import { ResenhaComponent } from './resenha.component/resenha.component';
 
 export const routes: Routes = [
     { path: 'usuarios', component: UsuarioComponent },
@@ -31,6 +32,7 @@ export const routes: Routes = [
     { path: 'plataformas/novo', component: FormPlataforma },
     { path: 'plataformas/alterar/:id', component: FormPlataforma },
 
+    { path: 'resenhas', component: ResenhaComponent }
 
 
 ];

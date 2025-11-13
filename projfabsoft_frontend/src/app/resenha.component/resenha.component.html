@@ -1,0 +1,15 @@
+<main class="container">
+    <h2>Resenhas</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Resenha</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let umaResenha of listaResenhas">
+                <td>{{umaResenha.conteudo}}</td>
+            </tr>
+        </tbody>
+    </table>
+</main>
