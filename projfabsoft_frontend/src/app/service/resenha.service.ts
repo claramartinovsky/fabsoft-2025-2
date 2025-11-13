@@ -13,4 +13,9 @@ export class ResenhaService {
   getResenhas(){
     return this.http.get<Resenha[]>(this.apiURL);
   }
+
+  saveResenha(resenha:Resenha){
+    return this.http.post(this.apiURL,resenha);
+  }
+
 }
