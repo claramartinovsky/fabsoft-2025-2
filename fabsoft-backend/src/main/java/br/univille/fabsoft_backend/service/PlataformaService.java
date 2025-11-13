@@ -9,4 +9,6 @@ public interface PlataformaService {
     Plataforma save(Plataforma plataforma);
     Plataforma update(long id, Plataforma plataforma) throws Exception;
     Plataforma delete(long id) throws Exception;
+
+    Plataforma getById(long id);
 }

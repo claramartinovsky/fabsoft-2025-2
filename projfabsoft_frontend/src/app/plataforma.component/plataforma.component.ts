@@ -28,5 +28,9 @@ export class PlataformaComponent {
 
  novo(){
   this.router.navigate(['plataformas/novo']);
-} 
+}
+
+  alterar(plataforma:Plataforma){
+      this.router.navigate(['plataformas/alterar', plataforma.id]);
+  }
 }

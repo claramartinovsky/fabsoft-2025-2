@@ -56,6 +56,13 @@ public class PlataformaController {
         }
     }
 
+    @GetMapping("/{id}")	
+    public ResponseEntity<Plataforma> getPlataformaId(@PathVariable Long id){
+        var plataforma = service.getById(id);
+
+        return new ResponseEntity<Plataforma>(plataforma, HttpStatus.OK);
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Plataforma> update(@PathVariable long id) {
         if (id <= 0) {

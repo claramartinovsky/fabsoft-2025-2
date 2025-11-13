@@ -48,4 +48,13 @@ public class PlataformaServiceImpl implements PlataformaService {
         repository.delete(plataformaAntiga);
         return plataformaAntiga;
     }
+
+    @Override
+    public Plataforma getById(long id) {
+        var retorno = repository.findById(id);
+        if(retorno.isPresent())
+            return retorno.get();
+        
+        return null;
+    }
 }

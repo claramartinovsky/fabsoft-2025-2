@@ -29,6 +29,8 @@ export const routes: Routes = [
 
     { path: 'plataformas', component: PlataformaComponent },
     { path: 'plataformas/novo', component: FormPlataforma },
+    { path: 'plataformas/alterar/:id', component: FormPlataforma },
+
 
 
 ];

@@ -15,6 +15,13 @@ export class PlataformaService {
   }
 
  savePlataforma(plataforma:Plataforma){
+  if(plataforma.id){
+    return this.http.put(this.apiURL + '/' + plataforma.id, plataforma)
+  }
   return this.http.post(this.apiURL,plataforma);
-  } 
+  }
+
+  getPlataformaById(id: any) {
+    return this.http.get<Plataforma>(this.apiURL + '/' + id);
+  }
 }
