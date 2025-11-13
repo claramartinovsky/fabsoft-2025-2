@@ -25,5 +25,8 @@ export class ResenhaService {
     return this.http.get<Resenha>(this.apiURL + '/' + id);
   }
 
+excluirResenha(id: any){
+  return this.http.delete<Resenha>(this.apiURL + '/' + id);
+}
 
 }
