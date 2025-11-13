@@ -41,4 +41,5 @@ export const routes: Routes = [
 
     { path: 'colecoes', component: ColecaoComponent },
     { path: 'colecoes/novo', component: FormColecao },
+    { path: 'colecoes/alterar/:id', component: FormColecao }
 ];

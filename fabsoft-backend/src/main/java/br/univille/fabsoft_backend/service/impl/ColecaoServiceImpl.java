@@ -48,4 +48,13 @@ public class ColecaoServiceImpl implements ColecaoService {
     public List<Colecao> getByUsuario(long usuarioId) {
         return repository.findByUsuarioId(usuarioId);
     }
+
+    @Override
+    public Colecao getById(long id) {
+        var retorno = repository.findById(id);
+        if(retorno.isPresent())
+            return retorno.get();
+        
+        return null;
+    }
 }

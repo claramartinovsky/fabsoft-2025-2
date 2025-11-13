@@ -15,7 +15,14 @@ export class ColecaoService {
   }
 
   saveColecao(colecao:Colecao){
+    if(colecao.id){
+      return this.http.put(this.apiURL + '/' + colecao.id, colecao);
+    }
     return this.http.post(this.apiURL,colecao);
+  }
+
+  getColecaoById(id: any) {
+    return this.http.get<Colecao>(this.apiURL + '/' + id);
   }
 
 }

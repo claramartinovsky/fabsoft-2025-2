@@ -29,5 +29,9 @@ export class ColecaoComponent {
 
 novo(){
   this.router.navigate(['colecoes/novo']);
-}    
+}
+
+  alterar(colecao:Colecao){
+      this.router.navigate(['colecoes/alterar', colecao.id]);
+  }
 }

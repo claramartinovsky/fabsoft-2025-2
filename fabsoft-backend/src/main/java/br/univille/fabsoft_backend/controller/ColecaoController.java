@@ -50,6 +50,13 @@ public class ColecaoController {
         }
     }
 
+    @GetMapping("/{id}")	
+    public ResponseEntity<Colecao> getColecaoId(@PathVariable Long id){
+        var colecao = service.getById(id);
+
+        return new ResponseEntity<Colecao>(colecao, HttpStatus.OK);
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Colecao> delete(@PathVariable long id) {
         try {

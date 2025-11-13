@@ -10,4 +10,6 @@ public interface ColecaoService {
     Colecao delete(long id);
 
     List<Colecao> getByUsuario(long usuarioId);
+
+    Colecao getById(long id);
 }
