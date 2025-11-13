@@ -24,4 +24,8 @@ export class PlataformaService {
   getPlataformaById(id: any) {
     return this.http.get<Plataforma>(this.apiURL + '/' + id);
   }
+
+  excluirPlataforma(id: any){
+  return this.http.delete<Plataforma>(this.apiURL + '/' + id);
+}
 }
