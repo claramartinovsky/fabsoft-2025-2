@@ -63,21 +63,18 @@ public class JogoController {
         return new ResponseEntity<Jogo>(jogo, HttpStatus.OK);
     }
 
-     @DeleteMapping("/{id}")
-    public ResponseEntity<Jogo> 
-        update(@PathVariable long id){
-
-        if(id <= 0){
-            return ResponseEntity.badRequest().build();
-        }
-
-        try {
-            var jogo = service.delete(id);
-            return new ResponseEntity<Jogo>(jogo,HttpStatus.OK);
-        } catch (Exception e) {
-            return ResponseEntity.notFound().build();
-        }
-
-
+@DeleteMapping("/{id}")
+public ResponseEntity<Void> delete(@PathVariable long id){
+    if(id <= 0){
+        return ResponseEntity.badRequest().build();
     }
+
+    try {
+        service.delete(id); 
+        return ResponseEntity.noContent().build(); 
+    } catch (Exception e) {
+        return ResponseEntity.notFound().build();
+    }
+}
+
 }

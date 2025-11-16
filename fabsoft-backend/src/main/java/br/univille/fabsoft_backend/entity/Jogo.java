@@ -57,7 +57,7 @@ public class Jogo {
 
 
     @ManyToMany(mappedBy = "jogos")
-    @JsonIgnoreProperties("jogos")
+    @JsonIgnoreProperties({"jogos", "colecoes"})
     private List<Colecao> colecoes;
 
   

@@ -1,16 +1,43 @@
-<main class="container">
-    <h2>Colecao</h2>
-    <div class="card">
-        <div class="card-body">
-            <div class="form-group">
-                <label for="txtNome">Nome</label>    
-                <input type="text" 
-                    [(ngModel)]="colecao.nome"
-                    class="form-control"
-                    id="txtNome">
-            </div>
-        </div>
-        <button (click)="salvar()" 
-        class="btn btn-primary">Salvar</button>
+<main class="container my-4">
+  <h2 class="mb-4">Coleção</h2>
+
+  <div class="card">
+    <div class="card-body">
+
+
+      <div class="form-group mb-3">
+        <label for="selectUsuario">Usuário</label>
+        <select 
+  [(ngModel)]="colecao.usuario"
+  name="usuario"
+>
+  <option [ngValue]="null">Selecione um usuário</option>
+  <option *ngFor="let u of listaUsuarios" [ngValue]="u">
+    {{ u.nome }}
+  </option>
+</select>
+
+      </div>
+
+
+      <div class="form-group mb-3">
+        <label for="selectJogos">Jogos</label>
+        <select 
+  multiple
+  [(ngModel)]="colecao.jogos"
+  name="jogos"
+>
+  <option *ngFor="let j of listaJogos" [ngValue]="j">
+    {{ j.nome }}
+  </option>
+</select>
+
+      </div>
+
     </div>
+
+    <div class="card-footer text-end">
+      <button class="btn btn-primary" (click)="salvar()">Salvar</button>
+    </div>
+  </div>
 </main>

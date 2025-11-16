@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 import br.univille.fabsoft_backend.entity.Usuario;
 import br.univille.fabsoft_backend.service.UsuarioService;
-import org.springframework.web.bind.annotation.GetMapping;
 
 
 @RestController
@@ -66,17 +65,17 @@ public class UsuarioController {
         }
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Usuario> update(@PathVariable long id) {
-        if (id <= 0) {
-            return ResponseEntity.badRequest().build();
-        }
-
-        try {
-            var usuario = service.delete(id);
-            return new ResponseEntity<>(usuario, HttpStatus.OK);
-        } catch (Exception e) {
-            return ResponseEntity.notFound().build();
-        }
+@DeleteMapping("/{id}")
+public ResponseEntity<Void> delete(@PathVariable long id){
+    if(id <= 0){
+        return ResponseEntity.badRequest().build();
     }
+
+    try {
+        service.delete(id); 
+        return ResponseEntity.noContent().build(); 
+    } catch (Exception e) {
+        return ResponseEntity.notFound().build();
+    }
+}
 }

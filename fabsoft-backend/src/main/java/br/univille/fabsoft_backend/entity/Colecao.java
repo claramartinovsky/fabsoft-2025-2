@@ -3,6 +3,8 @@ package br.univille.fabsoft_backend.entity;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -21,6 +23,7 @@ public class Colecao {
         joinColumns = @JoinColumn(name = "colecao_id"),
         inverseJoinColumns = @JoinColumn(name = "jogo_id")
     )
+    @JsonIgnoreProperties("colecoes")
     private Set<Jogo> jogos = new HashSet<>();
 
     public long getId() {
