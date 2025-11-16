@@ -1,41 +1,61 @@
-<main class="container">
-    <h2>Resenhas</h2>
-<a (click)="novo()" class="btn btn-primary">Novo</a>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Resenha</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let umaResenha of listaResenhas">
-                <td>{{umaResenha.conteudo}}</td>
-                <td>
-  <button 
-      (click)="alterar(umaResenha)"
-  class="btn btn-secondary">Alterar</button>
-  <button 
-      (click)="abrirConfirmacao(umaResenha)"
-  class="btn btn-danger">Excluir</button>
-</td>
-            </tr>
-        </tbody>
-    </table>
+<main class="container my-4">
+
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2 class="m-0">Resenhas</h2>
+    <button class="btn btn-primary" (click)="novo()">Novo</button>
+  </div>
+
+  <table class="table table-striped table-hover align-middle">
+    <thead class="table-dark">
+      <tr>
+        <th>Resenha</th>
+        <th>Jogo</th>
+        <th>Usuário</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let umaResenha of listaResenhas">
+        <td>{{ umaResenha.conteudo }}</td>
+        <td>{{ umaResenha.jogo.nome }}</td>
+        <td>{{ umaResenha.usuario.nome }}</td>
+        <td class="text-end">
+          <button 
+            class="btn btn-secondary btn-sm me-2"
+            (click)="alterar(umaResenha)">
+            Alterar
+          </button>
+          <button 
+            class="btn btn-danger btn-sm"
+            (click)="abrirConfirmacao(umaResenha)">
+            Excluir
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
 </main>
 
+
 <div class="modal fade" #myModal tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Excluir Resenha</h5>
-            </div>
-            <div class="modal-body">
-            Confirma a exclusão da resenha?
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" (click)="fecharConfirmacao()">Cancelar</button>
-            <button type="button" class="btn btn-primary" (click)="confirmarExclusao()">Sim</button>
-            </div>
-        </div>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Excluir Resenha</h5>
+      </div>
+
+      <div class="modal-body">
+        Confirma a exclusão da resenha?
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="fecharConfirmacao()">Cancelar</button>
+        <button type="button" class="btn btn-danger" (click)="confirmarExclusao()">Sim</button>
+      </div>
+
     </div>
+  </div>
 </div>

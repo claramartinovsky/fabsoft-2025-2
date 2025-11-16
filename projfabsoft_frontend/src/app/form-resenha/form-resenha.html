@@ -1,16 +1,58 @@
 <main class="container">
     <h2>Resenha</h2>
-    <div class="card">
+
+    <div class="card mt-3">
         <div class="card-body">
-            <div class="form-group">
-                <label for="txtConteudo">Conteúdo</label>    
-                <input type="text" 
-                    [(ngModel)]="resenha.conteudo"
-                    class="form-control"
-                    id="txtConteudo">
+
+   
+            <div class="form-group mb-3">
+                <label for="txtJogo">Jogo</label>
+                <select 
+                    class="form-select" 
+                    id="txtJogo"
+                    [(ngModel)]="resenha.jogo"
+                >
+                    <option 
+                        *ngFor="let umJogo of listaJogos"
+                        [ngValue]="{ id: umJogo.id }">
+                        {{ umJogo.nome }}
+                    </option>
+                </select>
             </div>
+
+   
+            <div class="form-group mb-3">
+                <label for="txtUsuario">Usuário</label>
+                <select 
+                    class="form-select"
+                    id="txtUsuario"
+                    [(ngModel)]="resenha.usuario"
+                >
+                    <option
+                        *ngFor="let umUsuario of listaUsuarios"
+                        [ngValue]="{ id: umUsuario.id }">
+                        {{ umUsuario.nome }}
+                    </option>
+                </select>
+            </div>
+
+   
+            <div class="form-group mb-3">
+                <label for="txtConteudo">Conteúdo</label>
+                <textarea
+                    id="txtConteudo"
+                    class="form-control"
+                    rows="4"
+                    [(ngModel)]="resenha.conteudo">
+                </textarea>
+            </div>
+
         </div>
-        <button (click)="salvar()" 
-        class="btn btn-primary">Salvar</button>
+
+        <div class="card-footer text-end">
+            <button (click)="salvar()" class="btn btn-primary">
+                Salvar
+            </button>
+        </div>
     </div>
 </main>
