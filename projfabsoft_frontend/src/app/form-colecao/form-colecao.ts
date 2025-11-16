@@ -57,7 +57,7 @@ export class FormColecao {
         });
     }
 
-      comparaUsuarios(obj1: Usuario, obj2: Usuario): boolean{
+    comparaUsuarios(obj1: Usuario, obj2: Usuario): boolean{
       return obj1 && obj2 ? obj1.id === obj2.id : obj1 === obj2
   }
 
