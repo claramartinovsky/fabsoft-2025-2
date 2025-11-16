@@ -5,10 +5,10 @@
   <div class="card">
     <div class="card-body">
 
-    
+
       <div class="mb-3">
         <label for="txtNome" class="form-label">Nome</label>
-        <input 
+        <input
           type="text"
           id="txtNome"
           class="form-control"
@@ -16,10 +16,32 @@
         >
       </div>
 
-    
+
+      <div class="mb-3">
+        <label for="txtDescricao" class="form-label">Descrição</label>
+        <textarea
+          id="txtDescricao"
+          class="form-control"
+          rows="3"
+          [(ngModel)]="jogo.descricao"
+        ></textarea>
+      </div>
+
+
+      <div class="mb-3">
+        <label for="txtData" class="form-label">Data de Lançamento</label>
+        <input
+          type="date"
+          id="txtData"
+          class="form-control"
+          [(ngModel)]="jogo.dataLancamento"
+        >
+      </div>
+
+  
       <div class="mb-3">
         <label class="form-label">Plataformas</label>
-        <select 
+        <select
           class="form-select"
           multiple
           [(ngModel)]="jogo.plataformas"
@@ -31,10 +53,10 @@
         </select>
       </div>
 
-    
+ 
       <div class="mb-3">
         <label class="form-label">Categorias</label>
-        <select 
+        <select
           class="form-select"
           multiple
           [(ngModel)]="jogo.categorias"

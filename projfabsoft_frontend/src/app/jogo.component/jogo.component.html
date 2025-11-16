@@ -5,11 +5,27 @@
         <thead>
             <tr>
                 <th>Nome</th>
+                <th>Descrição</th>
+                <th>Data de Lançamento</th>
+                <th>Plataformas</th>
+                <th>Categorias</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let umJogo of listaJogos">
                 <td>{{umJogo.nome}}</td>
+                <td>{{umJogo.descricao}}</td>
+                <td>{{umJogo.dataLancamento | date: 'dd/MM/yyyy'}}</td>
+                <td>
+                    <span *ngFor="let p of umJogo.plataformas; let i = index">
+                        {{ p.nome }}<span *ngIf="i < umJogo.plataformas.length - 1">, </span>
+                    </span>
+                </td>
+                <td>
+                    <span *ngFor="let c of umJogo.categorias; let i = index">
+                        {{ c.nome }}<span *ngIf="i < umJogo.categorias.length - 1">, </span>
+                    </span>
+                </td>
                  <td><a (click)="alterar(umJogo)" 
                     class="btn btn-secondary">Alterar</a>
                   <button 
