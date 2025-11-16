@@ -1,16 +1,20 @@
-<main class="container">
-    <h2>Avaliacao</h2>
-    <div class="card">
-        <div class="card-body">
-            <div class="form-group">
-                <label for="txtNota">Nota</label>    
-                <input type="number" 
-                    [(ngModel)]="avaliacao.nota"
-                    class="form-control"
-                    id="txtNota">
-            </div>
-        </div>
-        <button (click)="salvar()" 
-        class="btn btn-primary">Salvar</button>
+<main class="container my-4">
+  <h2 class="mb-4">Avaliação</h2>
+  <div class="card">
+    <div class="card-body">
+      <div class="form-group mb-3"> <label for="selectUsuario">Usuário</label> <select id="selectUsuario"
+          class="form-select" [(ngModel)]="avaliacao.usuario" [compareWith]="comparaUsuarios" name="usuario">
+          <option [ngValue]="null">Selecione um usuário</option>
+          <option *ngFor="let u of listaUsuarios" [ngValue]="u"> {{ u.nome }} </option>
+        </select> </div>
+      <div class="form-group mb-3"> <label for="selectJogo">Jogo</label> <select id="selectJogo" class="form-select"
+          [(ngModel)]="avaliacao.jogo" [compareWith]="comparaJogos" name="jogo">
+          <option [ngValue]="null">Selecione um jogo</option>
+          <option *ngFor="let j of listaJogos" [ngValue]="j"> {{ j.nome }} </option>
+        </select> </div>
+      <div class="form-group mb-3"> <label for="txtNota">Nota</label> <input type="number" id="txtNota"
+          class="form-control" [(ngModel)]="avaliacao.nota" name="nota" min="0" max="10"> </div>
     </div>
+    <div class="card-footer text-end"> <button class="btn btn-primary" (click)="salvar()">Salvar</button> </div>
+  </div>
 </main>
