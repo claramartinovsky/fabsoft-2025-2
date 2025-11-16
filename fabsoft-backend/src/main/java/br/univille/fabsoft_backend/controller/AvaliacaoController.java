@@ -75,13 +75,17 @@ public class AvaliacaoController {
         }
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Avaliacao> delete(@PathVariable long id) {
-        try {
-            var deletada = service.delete(id);
-            return new ResponseEntity<>(deletada, HttpStatus.OK);
-        } catch (Exception e) {
-            return ResponseEntity.notFound().build();
-        }
+@DeleteMapping("/{id}")
+public ResponseEntity<Void> delete(@PathVariable long id){
+    if(id <= 0){
+        return ResponseEntity.badRequest().build();
     }
+
+    try {
+        service.delete(id); 
+        return ResponseEntity.noContent().build(); 
+    } catch (Exception e) {
+        return ResponseEntity.notFound().build();
+    }
+}
 }
