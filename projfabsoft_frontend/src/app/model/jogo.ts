@@ -6,6 +6,6 @@ export class Jogo {
     nome: string;
     descricao: string;
     dataLancamento: Date;
-    plataforma: Plataforma;
-    categoria: Categoria;
+    plataformas: Plataforma[] = [];
+    categorias: Categoria[] =[];
 }
