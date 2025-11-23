@@ -49,6 +49,7 @@ export class FormAvaliacao {
 salvar() {
 
   const payload: Avaliacao = {
+    id: this.avaliacao.id,
     nota: this.avaliacao.nota,
     usuario: { id: this.avaliacao.usuario.id, nome: this.avaliacao.usuario.nome },
     jogo: { id: this.avaliacao.jogo.id, nome: this.avaliacao.jogo.nome }

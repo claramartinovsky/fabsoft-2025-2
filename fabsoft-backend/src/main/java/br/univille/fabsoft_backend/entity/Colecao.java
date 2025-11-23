@@ -15,6 +15,7 @@ public class Colecao {
 
     @ManyToOne
     @JoinColumn(name = "usuario_id")
+    @JsonIgnoreProperties({"resenhas", "avaliacoes", "colecoes"})
     private Usuario usuario;
 
     @ManyToMany

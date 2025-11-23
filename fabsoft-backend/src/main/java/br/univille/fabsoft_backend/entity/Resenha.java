@@ -17,12 +17,12 @@ public class Resenha {
 
     @ManyToOne
     @JoinColumn(name = "usuario_id")
-    @JsonIgnoreProperties({"resenhas"})
+    @JsonIgnoreProperties({"resenhas", "avaliacoes", "colecoes"})
     private Usuario usuario;
 
     @ManyToOne
     @JoinColumn(name = "jogo_id")
-    @JsonIgnoreProperties({"resenhas"})
+    @JsonIgnoreProperties({"resenhas", "avaliacoes", "colecoes"})
     private Jogo jogo;
 
     private String conteudo;

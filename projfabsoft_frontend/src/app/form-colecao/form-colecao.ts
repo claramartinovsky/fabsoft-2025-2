@@ -53,6 +53,7 @@ export class FormColecao {
 salvar() {
 
   const payload = {
+    id: this.colecao.id,
     usuario: { id: this.colecao.usuario.id },
     jogos: this.colecao.jogos.map(j => ({
       id: j.id
