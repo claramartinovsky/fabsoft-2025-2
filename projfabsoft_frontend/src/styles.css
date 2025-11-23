@@ -1,14 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(120deg, #faf7f4, #fbe4c8, #faf7f4);
+    background: linear-gradient(120deg, #0b0033, #1a003d, #000428);
     background-size: 400% 400%;
-    color: #584f4f;
+    color: #f5f5ff;
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    animation: gradientBG 20s ease infinite;
+    animation: gradientBG 18s ease infinite;
 }
 
 @keyframes gradientBG {
@@ -22,24 +20,30 @@ main.container {
     max-width: 600px;
     margin: 2rem auto;
     padding: 2rem;
-    background: linear-gradient(145deg, #ffffffcc, #f7eae1);
+    background: linear-gradient(145deg, #140028, #1f003d);
     border-radius: 20px;
-    box-shadow: 0 8px 25px #e2d6cf;
+    box-shadow: 0 0 25px rgba(255, 0, 255, 0.25);
 }
+
+
 
 h1.title, h2 {
     font-size: 2.2rem;
     margin-bottom: 1rem;
-    color: #d7a3c0;
-    text-shadow: 0 1px 2px #ffffff;
+    color: #ff2fd6;
+    text-shadow: 
+        0 0 6px rgba(255, 47, 214, 0.8),
+        0 0 12px rgba(0, 255, 255, 0.5);
 }
 
 p.subtitle {
     font-size: 1.2rem;
-    color: #a78bbd;
+    color: #00faff;
     margin-bottom: 2rem;
-    text-shadow: 0 1px 2px #ffffff70;
+    text-shadow: 0 0 6px rgba(0, 250, 255, 0.7);
 }
+
+
 
 .menu-grid, .home-container .menu {
     display: flex;
@@ -47,6 +51,8 @@ p.subtitle {
     gap: 1.5rem;
     justify-content: center;
 }
+
+
 
 .card {
     display: flex;
@@ -57,14 +63,21 @@ p.subtitle {
     width: 100%;
     max-width: 100%;
     min-height: 500px;
-    background: linear-gradient(135deg, #f7c8d0, #c8e8f7);
-    color: #584f4f;
+    background: linear-gradient(135deg, #1b0033, #2b0055);
+    color: #ffffff;
     font-weight: bold;
     text-align: center;
     border-radius: 20px;
     text-decoration: none;
-    box-shadow: 0 8px 20px #decfd9;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.25);
     transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 
+        0 0 20px rgba(0, 255, 255, 0.4),
+        0 0 40px rgba(255, 0, 255, 0.3);
 }
 
 .card form {
@@ -74,140 +87,125 @@ p.subtitle {
     gap: 1rem;
 }
 
-.card form input {
+
+
+.card form input,
+input.form-control,
+select.form-select,
+textarea.form-control {
     width: 100%;
-    padding: 0.8rem;
+    min-width: 250px;
+    padding: 0.75rem;
     border-radius: 12px;
-    border: none;
-    background-color: #ffffffaa;
-    color: #584f4f;
+    border: 1px solid #ff2fd6;
+    background-color: #0f0020;
+    color: #ffffff;
 }
 
 .card form input::placeholder {
-    color: #b8aeb1;
+    color: #7d5cff;
 }
 
-.card button {
-    margin-top: 1rem;
-    padding: 0.8rem 2rem;
-    border-radius: 12px;
-    border: none;
-    cursor: pointer;
-    background-color: #d0f7e2;
-    color: #584f4f;
-    font-weight: bold;
-    transition: 0.3s;
+label {
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+    color: #00faff;
 }
 
-.card button:hover {
-    background-color: #f7c8d0;
-}
 
-.card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 10px 25px #e7dfe8;
-}
 
 button, .btn {
     padding: 0.5rem 1rem;
     border-radius: 12px;
     border: none;
     cursor: pointer;
-    font-weight: 600;
+    font-weight: 700;
     transition: all 0.2s;
-    box-shadow: 0 4px 10px #e6dce2;
+    background: linear-gradient(135deg, #ff0080, #00eaff);
+    color: #ffffff;
+    box-shadow: 0 0 12px rgba(0, 234, 255, 0.6);
 }
 
-button.btn-primary, a.btn-primary {
-    background-color: #c8e8f7;
-    color: #584f4f;
+button:hover, .btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 234, 255, 0.9);
 }
 
-button.btn-primary:hover, a.btn-primary:hover {
-    background-color: #f7c8d0;
-}
 
-button.btn-secondary, a.btn-secondary {
-    background-color: #f7c8d0;
-    color: #584f4f;
-}
 
-button.btn-secondary:hover, a.btn-secondary:hover {
-    background-color: #d7c8f7;
-}
-
-button.btn-danger, a.btn-danger {
-    background-color: #f4a8a3;
-    color: #fff;
-}
-
-button.btn-danger:hover, a.btn-danger:hover {
-    background-color: #e37e77;
-}
-
+button.btn-primary, a.btn-primary,
+button.btn-secondary, a.btn-secondary,
+button.btn-danger, a.btn-danger,
 button.voltar-menu {
-    margin-top: 2rem;
-    background-color: #d0f7e2;
-    color: #584f4f;
+    background: linear-gradient(135deg, #ff0080, #00eaff);
+    color: #ffffff;
 }
 
-button.voltar-menu:hover {
-    background-color: #b3e9cd;
+button.btn-danger:hover {
+    background: linear-gradient(135deg, #ff0050, #ff0099);
 }
+
+
 
 table.table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 1rem;
-    background-color: #ffffffaa;
-    color: #584f4f;
+    background-color: #140028;
+    color: #ffffff;
     border-radius: 16px;
     overflow: hidden;
 }
 
 table.table th {
-    background-color: #e9d7f7;
+    background-color: #2b0055;
     font-weight: 600;
-    color: #584f4f;
+    color: #00faff;
 }
 
 table.table td {
-    background-color: #ffffffaa;
+    background-color: #140028;
     padding: 0.75rem;
     text-align: left;
-    border-bottom: 1px solid #e0d4cf;
+    border-bottom: 1px solid #3a0066;
 }
 
 table.table tr:hover td {
-    background-color: #fbe4c8;
+    background-color: #24004d;
 }
 
-table.table td a, table.table td button {
+table.table td a,
+table.table td button {
     margin-right: 0.3rem;
 }
+
+
 
 .modal-content {
     border-radius: 20px;
     padding: 1rem;
-    background: #ffffffee;
-    color: #584f4f;
-    box-shadow: 0 0 20px #e9dfe7;
+    background: #140028;
+    color: #ffffff;
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
 }
 
 .modal-header h5.modal-title {
     font-weight: 700;
-    color: #d7a3c0;
+    color: #ff2fd6;
 }
 
 .modal-footer button {
     min-width: 80px;
-    box-shadow: 0 4px 10px #e6dce2;
 }
+
+
 
 a {
     text-decoration: none;
     color: inherit;
 }
+
+
 
 form, .card-body {
     display: flex;
@@ -217,25 +215,35 @@ form, .card-body {
     max-width: 600px;
     padding: 2rem;
     margin: 1rem auto;
-    background: linear-gradient(145deg, #ffffffdd, #f7eae1);
+    background: linear-gradient(145deg, #140028, #1f003d);
     border-radius: 20px;
-    box-shadow: 0 6px 18px #ebe3df;
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.2);
 }
 
-input.form-control,
-select.form-select,
-textarea.form-control {
-    width: 100%;
-    min-width: 250px;
-    padding: 0.75rem;
-    border-radius: 12px;
-    border: 1px solid #e0d4cf;
-    background-color: #ffffffaa;
-    color: #584f4f;
+
+body, 
+p, 
+span, 
+li, 
+div, 
+label, 
+td, 
+th {
+  color: #f5f5ff !important;
 }
 
-label {
-    margin-bottom: 0.3rem;
-    font-weight: 600;
-    color: #a78bbd;
+strong {
+  color: #ffffff !important;
+}
+
+
+.card, 
+.card span, 
+.card strong {
+  color: #ffffff !important;
+}
+
+
+.subtitle {
+  color: #00faff !important;
 }

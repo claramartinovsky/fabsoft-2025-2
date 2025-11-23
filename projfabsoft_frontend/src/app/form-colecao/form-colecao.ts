@@ -50,12 +50,22 @@ export class FormColecao {
       }
     }
 
-    salvar(){
-      this.colecaoService.saveColecao(this.colecao)
-        .subscribe(resultado => {
-            this.router.navigate(['colecoes']);
-        });
-    }
+salvar() {
+
+  const payload = {
+    usuario: { id: this.colecao.usuario.id },
+    jogos: this.colecao.jogos.map(j => ({
+      id: j.id
+    }))
+  };
+
+  console.log('Payload enviado:', payload);
+
+  this.colecaoService.saveColecao(payload as any)
+    .subscribe(() => {
+      this.router.navigate(['colecoes']);
+    });
+}
 
     comparaUsuarios(obj1: Usuario, obj2: Usuario): boolean{
       return obj1 && obj2 ? obj1.id === obj2.id : obj1 === obj2
