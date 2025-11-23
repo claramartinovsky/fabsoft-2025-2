@@ -3,6 +3,7 @@ package br.univille.fabsoft_backend.entity;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Entity;
@@ -23,6 +24,7 @@ public class Usuario {
 
     @OneToMany(mappedBy = "usuario")
     @JsonIgnoreProperties("usuario")
+    @JsonIgnore
     private List<Resenha> resenhas;
 
 

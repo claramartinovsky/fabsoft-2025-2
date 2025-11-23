@@ -3,6 +3,7 @@ package br.univille.fabsoft_backend.entity;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.CascadeType;
@@ -48,6 +49,7 @@ public class Jogo {
 
     @OneToMany(mappedBy = "jogo")
     @JsonIgnoreProperties("jogo")
+    @JsonIgnore
     private List<Resenha> resenhas;
 
  
