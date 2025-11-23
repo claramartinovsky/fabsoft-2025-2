@@ -66,4 +66,10 @@ confirmarExclusao() {
         }
     );
 }
+
+voltarMenu() {
+  this.router.navigate(['']).then(() => {
+    window.location.reload();
+  });
+}
 }

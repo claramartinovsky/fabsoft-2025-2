@@ -68,4 +68,9 @@ private usuarioSelecionado!: Usuario;
         }
     );
 }
+voltarMenu() {
+  this.router.navigate(['']).then(() => {
+    window.location.reload();
+  });
+}
 }

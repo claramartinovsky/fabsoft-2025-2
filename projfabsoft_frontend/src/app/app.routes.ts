@@ -13,8 +13,11 @@ import { ResenhaComponent } from './resenha.component/resenha.component';
 import { FormResenha } from './form-resenha/form-resenha';
 import { ColecaoComponent } from './colecao.component/colecao.component';
 import { FormColecao } from './form-colecao/form-colecao';
-
+import { Home } from './pages/home/home';
 export const routes: Routes = [
+
+    { path: '', component: Home },
+
     { path: 'usuarios', component: UsuarioComponent },
     { path: 'usuarios/novo', component: FormUsuario },
     { path: 'usuarios/alterar/:id', component: FormUsuario },

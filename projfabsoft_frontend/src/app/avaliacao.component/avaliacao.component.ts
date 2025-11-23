@@ -67,4 +67,10 @@ export class AvaliacaoComponent {
         }
     );
 }
+
+voltarMenu() {
+  this.router.navigate(['']).then(() => {
+    window.location.reload();
+  });
+}
 }
